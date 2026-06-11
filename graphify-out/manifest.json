@@ -1,0 +1,1662 @@
+{
+  "/Users/leonAI/projects/_my/llm_wiki/components.json": {
+    "mtime": 1780540749.7776072,
+    "ast_hash": "d2922b530154b9895e967519bcd21142",
+    "semantic_hash": "d2922b530154b9895e967519bcd21142"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/extension/Readability.js": {
+    "mtime": 1780540749.7778804,
+    "ast_hash": "6de0c9d5d0072c789ffa2767e1a19460",
+    "semantic_hash": "6de0c9d5d0072c789ffa2767e1a19460"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/extension/Turndown.js": {
+    "mtime": 1780540749.7780209,
+    "ast_hash": "ef0aee0b6acf468d430d76ebc47906fa",
+    "semantic_hash": "ef0aee0b6acf468d430d76ebc47906fa"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/extension/manifest.json": {
+    "mtime": 1780540749.7783608,
+    "ast_hash": "ba561a67a72a0ea32a99f795e30e559f",
+    "semantic_hash": "ba561a67a72a0ea32a99f795e30e559f"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/extension/popup.js": {
+    "mtime": 1780540749.7786076,
+    "ast_hash": "68cee2a5d61ae874a9c4f66a247a7918",
+    "semantic_hash": "68cee2a5d61ae874a9c4f66a247a7918"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/mcp-server/package.json": {
+    "mtime": 1780540749.779579,
+    "ast_hash": "a89fe124f61fda285c021e51a2bc63a3",
+    "semantic_hash": "a89fe124f61fda285c021e51a2bc63a3"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/mcp-server/src/api-client.ts": {
+    "mtime": 1780540749.7797432,
+    "ast_hash": "8274bc65bbecf74bcd4a381d8641b0ac",
+    "semantic_hash": "8274bc65bbecf74bcd4a381d8641b0ac"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/mcp-server/src/index.ts": {
+    "mtime": 1780540749.779861,
+    "ast_hash": "71d9cb3fc2a1cb7539b28c3a59f4c04e",
+    "semantic_hash": "71d9cb3fc2a1cb7539b28c3a59f4c04e"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/mcp-server/test/api-client.test.ts": {
+    "mtime": 1780540749.7800057,
+    "ast_hash": "8630cf155c8d8a5221b784daaf8f5d77",
+    "semantic_hash": "8630cf155c8d8a5221b784daaf8f5d77"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/mcp-server/tsconfig.json": {
+    "mtime": 1780540749.780084,
+    "ast_hash": "bae28b6afaad488428e658b281987107",
+    "semantic_hash": "bae28b6afaad488428e658b281987107"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/package.json": {
+    "mtime": 1780540749.7808175,
+    "ast_hash": "1a2a2d94f155c8c4c3ea245716c85219",
+    "semantic_hash": "1a2a2d94f155c8c4c3ea245716c85219"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src-tauri/build.rs": {
+    "mtime": 1780540749.7821093,
+    "ast_hash": "106aa68057f429d252ae8210dbfd9c95",
+    "semantic_hash": "106aa68057f429d252ae8210dbfd9c95"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src-tauri/capabilities/default.json": {
+    "mtime": 1780540749.782245,
+    "ast_hash": "f51d30f78a582ee173301e5b6a0bcc65",
+    "semantic_hash": "f51d30f78a582ee173301e5b6a0bcc65"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src-tauri/src/api_server.rs": {
+    "mtime": 1780540749.8448844,
+    "ast_hash": "bf87e3f554591a5d9f9d3976762d36b6",
+    "semantic_hash": "bf87e3f554591a5d9f9d3976762d36b6"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src-tauri/src/clip_server.rs": {
+    "mtime": 1780540749.8450673,
+    "ast_hash": "802b1f5bac2aa0b302df3f12fba32c45",
+    "semantic_hash": "802b1f5bac2aa0b302df3f12fba32c45"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src-tauri/src/commands/claude_cli.rs": {
+    "mtime": 1780540749.845267,
+    "ast_hash": "51893c51fb01104e5cf37b8605aa0008",
+    "semantic_hash": "51893c51fb01104e5cf37b8605aa0008"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src-tauri/src/commands/codex_cli.rs": {
+    "mtime": 1780540749.8454099,
+    "ast_hash": "b001b1e0d99571070a11cb8ed6a553da",
+    "semantic_hash": "b001b1e0d99571070a11cb8ed6a553da"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src-tauri/src/commands/extract_images.rs": {
+    "mtime": 1780540749.8455496,
+    "ast_hash": "4697c3ceeff3895981ee5257101faafe",
+    "semantic_hash": "4697c3ceeff3895981ee5257101faafe"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src-tauri/src/commands/file_sync.rs": {
+    "mtime": 1780540749.8486025,
+    "ast_hash": "5bff621d7eabb86a589b83e12dd555ac",
+    "semantic_hash": "5bff621d7eabb86a589b83e12dd555ac"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src-tauri/src/commands/fs.rs": {
+    "mtime": 1780540749.8493106,
+    "ast_hash": "6d330662262d21d0c56543583d94b03b",
+    "semantic_hash": "6d330662262d21d0c56543583d94b03b"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src-tauri/src/commands/mod.rs": {
+    "mtime": 1780540749.8494306,
+    "ast_hash": "a9fac9aec8fdd101b82ffafb65647bca",
+    "semantic_hash": "a9fac9aec8fdd101b82ffafb65647bca"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src-tauri/src/commands/project.rs": {
+    "mtime": 1780540749.8495765,
+    "ast_hash": "fd85b3de68faa8005be8bc7e0022f0cd",
+    "semantic_hash": "fd85b3de68faa8005be8bc7e0022f0cd"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src-tauri/src/commands/search.rs": {
+    "mtime": 1780540749.8497224,
+    "ast_hash": "9d98d390541ebe0555e9c7ceb8502a5c",
+    "semantic_hash": "9d98d390541ebe0555e9c7ceb8502a5c"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src-tauri/src/commands/vectorstore.rs": {
+    "mtime": 1780540749.8498814,
+    "ast_hash": "10cfa35e155a512bd9f1f4af259064f7",
+    "semantic_hash": "10cfa35e155a512bd9f1f4af259064f7"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src-tauri/src/lib.rs": {
+    "mtime": 1780540749.850223,
+    "ast_hash": "caad5b9b9112973887d020c248d2dc1e",
+    "semantic_hash": "caad5b9b9112973887d020c248d2dc1e"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src-tauri/src/main.rs": {
+    "mtime": 1780540749.850371,
+    "ast_hash": "953b4c3074f5ee08ed25b773edcd64f6",
+    "semantic_hash": "953b4c3074f5ee08ed25b773edcd64f6"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src-tauri/src/panic_guard.rs": {
+    "mtime": 1780540749.8504534,
+    "ast_hash": "d2ef9e3947dfbc3caf86b19b4a375e42",
+    "semantic_hash": "d2ef9e3947dfbc3caf86b19b4a375e42"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src-tauri/src/proxy.rs": {
+    "mtime": 1780540749.8505607,
+    "ast_hash": "7122497cc8b2c80f83aceb8fd02eec3f",
+    "semantic_hash": "7122497cc8b2c80f83aceb8fd02eec3f"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src-tauri/src/tray.rs": {
+    "mtime": 1780540749.8506575,
+    "ast_hash": "cb6ecae4b93c041a78df868224021ab1",
+    "semantic_hash": "cb6ecae4b93c041a78df868224021ab1"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src-tauri/src/types/mod.rs": {
+    "mtime": 1780540749.8507788,
+    "ast_hash": "3b437a47610c57e2b8dcdfcb53a5eb36",
+    "semantic_hash": "3b437a47610c57e2b8dcdfcb53a5eb36"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src-tauri/src/types/wiki.rs": {
+    "mtime": 1780540749.8508582,
+    "ast_hash": "86281b0241188796fa3e322d0295ff1a",
+    "semantic_hash": "86281b0241188796fa3e322d0295ff1a"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src-tauri/tauri.conf.json": {
+    "mtime": 1780540749.85094,
+    "ast_hash": "f7278129a37ef736f051213ee723b878",
+    "semantic_hash": "f7278129a37ef736f051213ee723b878"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src-tauri/tauri.linux.conf.json": {
+    "mtime": 1780540749.8510094,
+    "ast_hash": "55ed5ef38a8a16bd7ae5f8aade66461d",
+    "semantic_hash": "55ed5ef38a8a16bd7ae5f8aade66461d"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src-tauri/tauri.macos.conf.json": {
+    "mtime": 1780540749.8510878,
+    "ast_hash": "06c6d37899d871bbeb161084ab9976c9",
+    "semantic_hash": "06c6d37899d871bbeb161084ab9976c9"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src-tauri/tauri.windows.conf.json": {
+    "mtime": 1780540749.8511596,
+    "ast_hash": "ec261b5ea80fa2f9e5dce436dc5baaa4",
+    "semantic_hash": "ec261b5ea80fa2f9e5dce436dc5baaa4"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/App.tsx": {
+    "mtime": 1780540749.851463,
+    "ast_hash": "37b872b69b02a3b38372a43c40923167",
+    "semantic_hash": "37b872b69b02a3b38372a43c40923167"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/commands/file-sync.ts": {
+    "mtime": 1780540749.851818,
+    "ast_hash": "83cb4d26b86f1361c789c4e2b3495d89",
+    "semantic_hash": "83cb4d26b86f1361c789c4e2b3495d89"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/commands/fs.ts": {
+    "mtime": 1780540749.85191,
+    "ast_hash": "d97516162531e99f084b5f51c00a956b",
+    "semantic_hash": "d97516162531e99f084b5f51c00a956b"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/chat/chat-input.tsx": {
+    "mtime": 1780540749.852105,
+    "ast_hash": "b8efbdbc2edce17f1624c28ad90ae511",
+    "semantic_hash": "b8efbdbc2edce17f1624c28ad90ae511"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/chat/chat-message.tsx": {
+    "mtime": 1780540749.8523283,
+    "ast_hash": "3d5a3a6108ff42ce03a759316b82e159",
+    "semantic_hash": "3d5a3a6108ff42ce03a759316b82e159"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/chat/chat-panel.tsx": {
+    "mtime": 1780540749.852537,
+    "ast_hash": "e098ec5e164683757b4fd1cad33c66d8",
+    "semantic_hash": "e098ec5e164683757b4fd1cad33c66d8"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/editor/file-preview.tsx": {
+    "mtime": 1780540749.852773,
+    "ast_hash": "91c334a935a1a0963ea6644e40422836",
+    "semantic_hash": "91c334a935a1a0963ea6644e40422836"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/editor/frontmatter-panel.tsx": {
+    "mtime": 1780540749.852901,
+    "ast_hash": "7c93565e2211f65fe23b349e8c63192a",
+    "semantic_hash": "7c93565e2211f65fe23b349e8c63192a"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/editor/wiki-editor.tsx": {
+    "mtime": 1780540749.8530128,
+    "ast_hash": "c655491da5baebdbd1261c8d6246bad0",
+    "semantic_hash": "c655491da5baebdbd1261c8d6246bad0"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/editor/wiki-reader.tsx": {
+    "mtime": 1780540749.8531184,
+    "ast_hash": "8eea18cb0a8cde984b089fb0d7826ede",
+    "semantic_hash": "8eea18cb0a8cde984b089fb0d7826ede"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/error-boundary.tsx": {
+    "mtime": 1780540749.8531933,
+    "ast_hash": "523980ab130c58ff69280b399a4759ef",
+    "semantic_hash": "523980ab130c58ff69280b399a4759ef"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/graph/graph-layout-worker.ts": {
+    "mtime": 1780540749.8533134,
+    "ast_hash": "c75c1920619040a5394d89237a3034b3",
+    "semantic_hash": "c75c1920619040a5394d89237a3034b3"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/graph/graph-view.tsx": {
+    "mtime": 1780540749.8535955,
+    "ast_hash": "9e935316170c5ed393839a28c669cad3",
+    "semantic_hash": "9e935316170c5ed393839a28c669cad3"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/layout/activity-panel.tsx": {
+    "mtime": 1780540749.8537905,
+    "ast_hash": "77d1564e39967e0e9f5b2ba4fd46e303",
+    "semantic_hash": "77d1564e39967e0e9f5b2ba4fd46e303"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/layout/app-layout.tsx": {
+    "mtime": 1780540749.8539186,
+    "ast_hash": "1d98fe55f7204bbe59d48e30084d6b86",
+    "semantic_hash": "1d98fe55f7204bbe59d48e30084d6b86"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/layout/chat-bar.tsx": {
+    "mtime": 1780540749.8539925,
+    "ast_hash": "1eeb05e57880d8510b435c175efe5543",
+    "semantic_hash": "1eeb05e57880d8510b435c175efe5543"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/layout/content-area.tsx": {
+    "mtime": 1780540749.8540664,
+    "ast_hash": "2d2a3f1e311c3fec4fe7c9c6466365d8",
+    "semantic_hash": "2d2a3f1e311c3fec4fe7c9c6466365d8"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/layout/file-tree.tsx": {
+    "mtime": 1780540749.8541384,
+    "ast_hash": "2d650ebae2a6c436fa285d16781219c1",
+    "semantic_hash": "2d650ebae2a6c436fa285d16781219c1"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/layout/icon-sidebar.tsx": {
+    "mtime": 1780540749.8542738,
+    "ast_hash": "c53800b599f2dd3faf398ec8761722a0",
+    "semantic_hash": "c53800b599f2dd3faf398ec8761722a0"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/layout/knowledge-tree.tsx": {
+    "mtime": 1780540749.8544004,
+    "ast_hash": "2ce16c8dc9b38b3abc0408ead1eeaebc",
+    "semantic_hash": "2ce16c8dc9b38b3abc0408ead1eeaebc"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/layout/preview-panel.tsx": {
+    "mtime": 1780540749.854517,
+    "ast_hash": "507198f1dc402edce87d2436b3137385",
+    "semantic_hash": "507198f1dc402edce87d2436b3137385"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/layout/research-panel.tsx": {
+    "mtime": 1780540749.8546696,
+    "ast_hash": "b59fdeacb470511e0d4a1c56f82c5fa1",
+    "semantic_hash": "b59fdeacb470511e0d4a1c56f82c5fa1"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/layout/sidebar-panel.tsx": {
+    "mtime": 1780540749.8547456,
+    "ast_hash": "68dcf6b1b9646580eeb10e9e5367c7a4",
+    "semantic_hash": "68dcf6b1b9646580eeb10e9e5367c7a4"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/layout/update-banner.tsx": {
+    "mtime": 1780540749.8548455,
+    "ast_hash": "dcec4f4d544e7cb4be4599e23f270051",
+    "semantic_hash": "dcec4f4d544e7cb4be4599e23f270051"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/lint/lint-view.test.ts": {
+    "mtime": 1780540749.8549807,
+    "ast_hash": "50fa5f8b9e905e5cc9c7c9c93bbc7e86",
+    "semantic_hash": "50fa5f8b9e905e5cc9c7c9c93bbc7e86"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/lint/lint-view.tsx": {
+    "mtime": 1780540749.8551314,
+    "ast_hash": "ff2834526bb1ef3fc8c038ff8dc71923",
+    "semantic_hash": "ff2834526bb1ef3fc8c038ff8dc71923"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/mermaid-diagram.test.tsx": {
+    "mtime": 1780540749.8552172,
+    "ast_hash": "d7cc0dc21a43521183deb74f02d82265",
+    "semantic_hash": "d7cc0dc21a43521183deb74f02d82265"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/mermaid-diagram.tsx": {
+    "mtime": 1780540749.8553464,
+    "ast_hash": "208b7fa96bcb0d7d6f89decd8fdea5a5",
+    "semantic_hash": "208b7fa96bcb0d7d6f89decd8fdea5a5"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/project/create-project-dialog.tsx": {
+    "mtime": 1780540749.8554964,
+    "ast_hash": "f215772b4c0206ef877ec2fbc1ffc822",
+    "semantic_hash": "f215772b4c0206ef877ec2fbc1ffc822"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/project/template-picker.tsx": {
+    "mtime": 1780540749.855574,
+    "ast_hash": "741c7c55f3f18f857a87a2ec8c127c7c",
+    "semantic_hash": "741c7c55f3f18f857a87a2ec8c127c7c"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/project/welcome-screen.tsx": {
+    "mtime": 1780540749.855652,
+    "ast_hash": "6e0e34de63bae140826385f8eb4597fb",
+    "semantic_hash": "6e0e34de63bae140826385f8eb4597fb"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/review/review-view.tsx": {
+    "mtime": 1780540749.8558352,
+    "ast_hash": "926dc901cd65c0193ec389ca880688a0",
+    "semantic_hash": "926dc901cd65c0193ec389ca880688a0"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/search/search-view.tsx": {
+    "mtime": 1780540749.8560336,
+    "ast_hash": "df123fff9259d6be7c00409f27897c11",
+    "semantic_hash": "df123fff9259d6be7c00409f27897c11"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/settings/context-size-selector.tsx": {
+    "mtime": 1780540749.856228,
+    "ast_hash": "354e9b5bc3864d0455c12d9f059605d6",
+    "semantic_hash": "354e9b5bc3864d0455c12d9f059605d6"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/settings/llm-presets.ts": {
+    "mtime": 1780540749.8564003,
+    "ast_hash": "bbef5d6b53c6b2094ee6240c90ad72af",
+    "semantic_hash": "bbef5d6b53c6b2094ee6240c90ad72af"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/settings/preset-resolver.test.ts": {
+    "mtime": 1780540749.856495,
+    "ast_hash": "2956037be6bb0f52226e3bceef3c3446",
+    "semantic_hash": "2956037be6bb0f52226e3bceef3c3446"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/settings/preset-resolver.ts": {
+    "mtime": 1780540749.856573,
+    "ast_hash": "8ed1eb03999771d3c6b122a0f44f8fbc",
+    "semantic_hash": "8ed1eb03999771d3c6b122a0f44f8fbc"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/settings/sections/about-section.tsx": {
+    "mtime": 1780540749.8567283,
+    "ast_hash": "55346606456fd0714c37c2866c20034d",
+    "semantic_hash": "55346606456fd0714c37c2866c20034d"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/settings/sections/api-server-section.tsx": {
+    "mtime": 1780540749.8568504,
+    "ast_hash": "87257c97d5e1bb629c2a0d660bcfe785",
+    "semantic_hash": "87257c97d5e1bb629c2a0d660bcfe785"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/settings/sections/changelog-section.tsx": {
+    "mtime": 1780540749.8572345,
+    "ast_hash": "1e45193d91c7a13d04709ce554fa2d44",
+    "semantic_hash": "1e45193d91c7a13d04709ce554fa2d44"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/settings/sections/embedding-section.tsx": {
+    "mtime": 1780540749.857378,
+    "ast_hash": "7260c3a078fb023ebe7003aee2e2983d",
+    "semantic_hash": "7260c3a078fb023ebe7003aee2e2983d"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/settings/sections/general-section.tsx": {
+    "mtime": 1780540749.8574674,
+    "ast_hash": "41c8cea93c27e287638b3f1298ac4ef4",
+    "semantic_hash": "41c8cea93c27e287638b3f1298ac4ef4"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/settings/sections/interface-section.tsx": {
+    "mtime": 1780540749.8575678,
+    "ast_hash": "92c2164bbabdeac5c0094bd95fd14515",
+    "semantic_hash": "92c2164bbabdeac5c0094bd95fd14515"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/settings/sections/llm-provider-section.tsx": {
+    "mtime": 1780540749.857731,
+    "ast_hash": "bffdad335085ef0fb556b8155ccb3c72",
+    "semantic_hash": "bffdad335085ef0fb556b8155ccb3c72"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/settings/sections/maintenance-section.tsx": {
+    "mtime": 1780540749.8578582,
+    "ast_hash": "fda0356f527bad852000a7eecc33fd81",
+    "semantic_hash": "fda0356f527bad852000a7eecc33fd81"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/settings/sections/multimodal-section.tsx": {
+    "mtime": 1780540749.8580024,
+    "ast_hash": "f3a4ac8680705a58b126e7ec788d26c0",
+    "semantic_hash": "f3a4ac8680705a58b126e7ec788d26c0"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/settings/sections/network-section.tsx": {
+    "mtime": 1780540749.8580866,
+    "ast_hash": "03429ab44e34b614150ed29bdd63c33c",
+    "semantic_hash": "03429ab44e34b614150ed29bdd63c33c"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/settings/sections/output-section.tsx": {
+    "mtime": 1780540749.8581603,
+    "ast_hash": "626f108ef6c71e4e2f9c170abf50e545",
+    "semantic_hash": "626f108ef6c71e4e2f9c170abf50e545"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/settings/sections/scheduled-import-section.tsx": {
+    "mtime": 1780540749.8582723,
+    "ast_hash": "e91e2b231c0fe8f64b2f6925042b1ad8",
+    "semantic_hash": "e91e2b231c0fe8f64b2f6925042b1ad8"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/settings/sections/source-watch-section.tsx": {
+    "mtime": 1780540749.8583963,
+    "ast_hash": "de21482dc5ff7738857514292035e4d7",
+    "semantic_hash": "de21482dc5ff7738857514292035e4d7"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/settings/sections/web-search-section.tsx": {
+    "mtime": 1780540749.8585327,
+    "ast_hash": "a55c59d39c4b505b4a0883a6a1528f6c",
+    "semantic_hash": "a55c59d39c4b505b4a0883a6a1528f6c"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/settings/settings-types.ts": {
+    "mtime": 1780540749.858643,
+    "ast_hash": "287ab029188761b191488d4f98f82af3",
+    "semantic_hash": "287ab029188761b191488d4f98f82af3"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/settings/settings-view.tsx": {
+    "mtime": 1780540749.858804,
+    "ast_hash": "6463e41586081337504267a67fe2ffb4",
+    "semantic_hash": "6463e41586081337504267a67fe2ffb4"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/sources/sources-view.tsx": {
+    "mtime": 1780540749.8590221,
+    "ast_hash": "7e51379bb1967b54fea077bb9ee36e74",
+    "semantic_hash": "7e51379bb1967b54fea077bb9ee36e74"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/ui/button.tsx": {
+    "mtime": 1780540749.8591611,
+    "ast_hash": "705bf3552a39e0c722665ccbecb30654",
+    "semantic_hash": "705bf3552a39e0c722665ccbecb30654"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/ui/dialog.tsx": {
+    "mtime": 1780540749.8592377,
+    "ast_hash": "d9618a63d34473ec512321cc12d43692",
+    "semantic_hash": "d9618a63d34473ec512321cc12d43692"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/ui/input.tsx": {
+    "mtime": 1780540749.8593097,
+    "ast_hash": "0607b02d99a2e92f9509223f36ccc6ec",
+    "semantic_hash": "0607b02d99a2e92f9509223f36ccc6ec"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/ui/label.tsx": {
+    "mtime": 1780540749.8593898,
+    "ast_hash": "92c6cf712c42f55463403a9241294aa0",
+    "semantic_hash": "92c6cf712c42f55463403a9241294aa0"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/ui/resizable.tsx": {
+    "mtime": 1780540749.859482,
+    "ast_hash": "d0883a939b751a7af4f57470815191cb",
+    "semantic_hash": "d0883a939b751a7af4f57470815191cb"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/ui/scroll-area.tsx": {
+    "mtime": 1780540749.8595543,
+    "ast_hash": "76048bb8b62839a01102cf7730024b3f",
+    "semantic_hash": "76048bb8b62839a01102cf7730024b3f"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/ui/separator.tsx": {
+    "mtime": 1780540749.8596263,
+    "ast_hash": "e29d263d0592b88a0622f56c03124879",
+    "semantic_hash": "e29d263d0592b88a0622f56c03124879"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/components/ui/tooltip.tsx": {
+    "mtime": 1780540749.8596992,
+    "ast_hash": "6566a444ce6c0a87d6611903430534fa",
+    "semantic_hash": "6566a444ce6c0a87d6611903430534fa"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/i18n/en.json": {
+    "mtime": 1780540749.8599308,
+    "ast_hash": "fc4ed3145849035c21601650bd20cff5",
+    "semantic_hash": "fc4ed3145849035c21601650bd20cff5"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/i18n/i18n-parity.test.ts": {
+    "mtime": 1780540749.8603187,
+    "ast_hash": "9d49649761d22f7861d33e494f405b65",
+    "semantic_hash": "9d49649761d22f7861d33e494f405b65"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/i18n/index.ts": {
+    "mtime": 1780540749.8603895,
+    "ast_hash": "9e4392873363aa2a021d132990633865",
+    "semantic_hash": "9e4392873363aa2a021d132990633865"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/i18n/zh.json": {
+    "mtime": 1780540749.8605754,
+    "ast_hash": "a64277872cf6858cbae6c19ec9c3d1de",
+    "semantic_hash": "a64277872cf6858cbae6c19ec9c3d1de"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/__tests__/claude-cli-transport.test.ts": {
+    "mtime": 1780540749.861194,
+    "ast_hash": "fbe9c3a1fde75cf37ff2851850af1d0e",
+    "semantic_hash": "fbe9c3a1fde75cf37ff2851850af1d0e"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/__tests__/llm-providers.test.ts": {
+    "mtime": 1780540749.8613174,
+    "ast_hash": "e61d3ed2eee15f918da80f6aa543f0e5",
+    "semantic_hash": "e61d3ed2eee15f918da80f6aa543f0e5"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/anytxt-search.test.ts": {
+    "mtime": 1780540749.8614588,
+    "ast_hash": "70f053b1f04c5598d9055a5836b95a5c",
+    "semantic_hash": "70f053b1f04c5598d9055a5836b95a5c"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/anytxt-search.ts": {
+    "mtime": 1780540749.861696,
+    "ast_hash": "30e34fce99388c0f8c72a0f6ef803318",
+    "semantic_hash": "30e34fce99388c0f8c72a0f6ef803318"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/api-server-constants.ts": {
+    "mtime": 1780540749.8617687,
+    "ast_hash": "2c8b84090b2abc227f3bcf1983db7c8c",
+    "semantic_hash": "2c8b84090b2abc227f3bcf1983db7c8c"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/api-server.real-llm.test.ts": {
+    "mtime": 1780540749.8618734,
+    "ast_hash": "25e61d0e0115e8293c233a8da10eb8b5",
+    "semantic_hash": "25e61d0e0115e8293c233a8da10eb8b5"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/auto-save.ts": {
+    "mtime": 1780540749.8621135,
+    "ast_hash": "4ecd98a6ff33bd827e856db858955ce9",
+    "semantic_hash": "4ecd98a6ff33bd827e856db858955ce9"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/azure-openai.test.ts": {
+    "mtime": 1780540749.8623254,
+    "ast_hash": "c7e7d2db418eba5f0a530a360afc27d7",
+    "semantic_hash": "c7e7d2db418eba5f0a530a360afc27d7"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/azure-openai.ts": {
+    "mtime": 1780540749.8623955,
+    "ast_hash": "c95e9ca4fd4e09c402a7eb959c8ae500",
+    "semantic_hash": "c95e9ca4fd4e09c402a7eb959c8ae500"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/changelog.ts": {
+    "mtime": 1780540749.86254,
+    "ast_hash": "b093957dad14b87c5c0ca866b0a8c6ca",
+    "semantic_hash": "b093957dad14b87c5c0ca866b0a8c6ca"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/claude-cli-transport.ts": {
+    "mtime": 1780540749.8630579,
+    "ast_hash": "3f7917d44b8146437d5b83604a36f9b6",
+    "semantic_hash": "3f7917d44b8146437d5b83604a36f9b6"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/clip-watcher.ts": {
+    "mtime": 1780540749.8631532,
+    "ast_hash": "a15072386ebfb427d17964fc835c8482",
+    "semantic_hash": "a15072386ebfb427d17964fc835c8482"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/codex-cli-transport.test.ts": {
+    "mtime": 1780540749.8632638,
+    "ast_hash": "33a578fb693683b62466842ecfc6608d",
+    "semantic_hash": "33a578fb693683b62466842ecfc6608d"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/codex-cli-transport.ts": {
+    "mtime": 1780540749.8633704,
+    "ast_hash": "d7127f7e8717a72aa9d859c96c9d042e",
+    "semantic_hash": "d7127f7e8717a72aa9d859c96c9d042e"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/connection-tests.test.ts": {
+    "mtime": 1780540749.8634543,
+    "ast_hash": "d0506f8cada60fed6afb946e2803e84c",
+    "semantic_hash": "d0506f8cada60fed6afb946e2803e84c"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/connection-tests.ts": {
+    "mtime": 1780540749.863553,
+    "ast_hash": "5a4eb718f0cbe0d3cff7457bba7359f1",
+    "semantic_hash": "5a4eb718f0cbe0d3cff7457bba7359f1"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/context-budget.test.ts": {
+    "mtime": 1780540749.8636525,
+    "ast_hash": "b0959103f2faebce1f53a7a9ea03e0f0",
+    "semantic_hash": "b0959103f2faebce1f53a7a9ea03e0f0"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/context-budget.ts": {
+    "mtime": 1780540749.8637607,
+    "ast_hash": "8029aaa0598ab1a98a0a19d1608f0a6d",
+    "semantic_hash": "8029aaa0598ab1a98a0a19d1608f0a6d"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/dedup-queue.test.ts": {
+    "mtime": 1780540749.8638813,
+    "ast_hash": "7e4c13062b33b0727852a711db538bf1",
+    "semantic_hash": "7e4c13062b33b0727852a711db538bf1"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/dedup-queue.ts": {
+    "mtime": 1780540749.864053,
+    "ast_hash": "a72c2f992add6899e02a4e764b7e7999",
+    "semantic_hash": "a72c2f992add6899e02a4e764b7e7999"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/dedup-runner.ts": {
+    "mtime": 1780540749.8641522,
+    "ast_hash": "cca73a34274ef07daeca4de14b1e03f9",
+    "semantic_hash": "cca73a34274ef07daeca4de14b1e03f9"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/dedup-storage.ts": {
+    "mtime": 1780540749.8642292,
+    "ast_hash": "82205554e170c5c6085a777e528b277a",
+    "semantic_hash": "82205554e170c5c6085a777e528b277a"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/dedup.test.ts": {
+    "mtime": 1780540749.8643277,
+    "ast_hash": "0f38e5933e8ef9705a58b6e7dcdc8126",
+    "semantic_hash": "0f38e5933e8ef9705a58b6e7dcdc8126"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/dedup.ts": {
+    "mtime": 1780540749.8644488,
+    "ast_hash": "100cd60ad6769859bc4723ce918e6432",
+    "semantic_hash": "100cd60ad6769859bc4723ce918e6432"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/deep-research.test.ts": {
+    "mtime": 1780540749.8645687,
+    "ast_hash": "f647a900ac29aeaed664bdd0b4b87180",
+    "semantic_hash": "f647a900ac29aeaed664bdd0b4b87180"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/deep-research.ts": {
+    "mtime": 1780540749.8647175,
+    "ast_hash": "20c3a75f6b0803a48485cf334f99003d",
+    "semantic_hash": "20c3a75f6b0803a48485cf334f99003d"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/detect-language.property.test.ts": {
+    "mtime": 1780540749.864806,
+    "ast_hash": "f63c0fcf634a496ffe034b3af2165d1a",
+    "semantic_hash": "f63c0fcf634a496ffe034b3af2165d1a"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/detect-language.test.ts": {
+    "mtime": 1780540749.864908,
+    "ast_hash": "ade1ccd7ca5eb63df7222d90b0c62b05",
+    "semantic_hash": "ade1ccd7ca5eb63df7222d90b0c62b05"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/detect-language.ts": {
+    "mtime": 1780540749.8650324,
+    "ast_hash": "f752e38365ddb0dfb165eff36ac098fe",
+    "semantic_hash": "f752e38365ddb0dfb165eff36ac098fe"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/embedding.real-llm.test.ts": {
+    "mtime": 1780540749.865187,
+    "ast_hash": "8d14c7bf6e5f9716f273939d8e4b58c5",
+    "semantic_hash": "8d14c7bf6e5f9716f273939d8e4b58c5"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/embedding.test.ts": {
+    "mtime": 1780540749.8653924,
+    "ast_hash": "807b650cb5275cf289a743a709b05902",
+    "semantic_hash": "807b650cb5275cf289a743a709b05902"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/embedding.ts": {
+    "mtime": 1780540749.8655486,
+    "ast_hash": "c854fd26ef41c276f40925a09457e1db",
+    "semantic_hash": "c854fd26ef41c276f40925a09457e1db"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/endpoint-normalizer.test.ts": {
+    "mtime": 1780540749.865681,
+    "ast_hash": "7344af9e4bc5761528a1057cebcc4e94",
+    "semantic_hash": "7344af9e4bc5761528a1057cebcc4e94"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/endpoint-normalizer.ts": {
+    "mtime": 1780540749.865804,
+    "ast_hash": "c1da747305b42c281b04c5d6111c079d",
+    "semantic_hash": "c1da747305b42c281b04c5d6111c079d"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/enrich-wikilinks.real-llm.test.ts": {
+    "mtime": 1780540749.8659117,
+    "ast_hash": "c25191f36ae933f8fb76ac1b1720c67d",
+    "semantic_hash": "c25191f36ae933f8fb76ac1b1720c67d"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/enrich-wikilinks.scenarios.test.ts": {
+    "mtime": 1780540749.8660126,
+    "ast_hash": "a7f6a2cdf38145c39444cdcf2c8e66e2",
+    "semantic_hash": "a7f6a2cdf38145c39444cdcf2c8e66e2"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/enrich-wikilinks.test.ts": {
+    "mtime": 1780540749.8661149,
+    "ast_hash": "f98aa4b9a68c40c254b7eb7f99df68f4",
+    "semantic_hash": "f98aa4b9a68c40c254b7eb7f99df68f4"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/enrich-wikilinks.ts": {
+    "mtime": 1780540749.8662124,
+    "ast_hash": "c553ab4df1508501524d565762149829",
+    "semantic_hash": "c553ab4df1508501524d565762149829"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/extract-source-images.test.ts": {
+    "mtime": 1780540749.8662896,
+    "ast_hash": "3e9566f5b4e967a86f3aa573844a5807",
+    "semantic_hash": "3e9566f5b4e967a86f3aa573844a5807"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/extract-source-images.ts": {
+    "mtime": 1780540749.8664353,
+    "ast_hash": "fef57179d1500a425f27de1ccace7e4e",
+    "semantic_hash": "fef57179d1500a425f27de1ccace7e4e"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/file-types.test.ts": {
+    "mtime": 1780540749.8665216,
+    "ast_hash": "465f677166c217100642c800c25b266b",
+    "semantic_hash": "465f677166c217100642c800c25b266b"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/file-types.ts": {
+    "mtime": 1780540749.866615,
+    "ast_hash": "265b24a358d4d65dee241fd50e52adfe",
+    "semantic_hash": "265b24a358d4d65dee241fd50e52adfe"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/frontmatter.test.ts": {
+    "mtime": 1780540749.8667417,
+    "ast_hash": "74b0a3c9180651f95f1c4b76bfaa7dd2",
+    "semantic_hash": "74b0a3c9180651f95f1c4b76bfaa7dd2"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/frontmatter.ts": {
+    "mtime": 1780540749.8668487,
+    "ast_hash": "66761292d6c917c6480ac5fd52070bdf",
+    "semantic_hash": "66761292d6c917c6480ac5fd52070bdf"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/graph-filters.test.ts": {
+    "mtime": 1780540749.866942,
+    "ast_hash": "2c3e3c17bf4b7aab41d57ce8d5606ada",
+    "semantic_hash": "2c3e3c17bf4b7aab41d57ce8d5606ada"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/graph-filters.ts": {
+    "mtime": 1780540749.867018,
+    "ast_hash": "e9be18142b0060b8d9ba29e59f58249e",
+    "semantic_hash": "e9be18142b0060b8d9ba29e59f58249e"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/graph-insights.ts": {
+    "mtime": 1780540749.8671227,
+    "ast_hash": "d156481d89707111751cc55bc5701f97",
+    "semantic_hash": "d156481d89707111751cc55bc5701f97"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/graph-relevance.ts": {
+    "mtime": 1780540749.8672454,
+    "ast_hash": "e13690382ffcfa20983d6b2afba14032",
+    "semantic_hash": "e13690382ffcfa20983d6b2afba14032"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/graph-search.test.ts": {
+    "mtime": 1780540749.8673258,
+    "ast_hash": "57f0bd6bfe14fcfd48e75304cd306eda",
+    "semantic_hash": "57f0bd6bfe14fcfd48e75304cd306eda"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/graph-search.ts": {
+    "mtime": 1780540749.8674014,
+    "ast_hash": "0677b3a7e6ce3b2370b119d2f1a71e0d",
+    "semantic_hash": "0677b3a7e6ce3b2370b119d2f1a71e0d"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/graph-visibility.test.ts": {
+    "mtime": 1780540749.86748,
+    "ast_hash": "7813e2b21200960703c9567b00d4fe5e",
+    "semantic_hash": "7813e2b21200960703c9567b00d4fe5e"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/graph-visibility.ts": {
+    "mtime": 1780540749.8675547,
+    "ast_hash": "7691c4a191275d158f547347b7333513",
+    "semantic_hash": "7691c4a191275d158f547347b7333513"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/greeting-detector.test.ts": {
+    "mtime": 1780540749.8676345,
+    "ast_hash": "cc1af445d4458ec52a6d9633e1fc145f",
+    "semantic_hash": "cc1af445d4458ec52a6d9633e1fc145f"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/greeting-detector.ts": {
+    "mtime": 1780540749.867724,
+    "ast_hash": "c67814795f642aa327ca797d013c829f",
+    "semantic_hash": "c67814795f642aa327ca797d013c829f"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/has-usable-llm.test.ts": {
+    "mtime": 1780540749.8678043,
+    "ast_hash": "69c050388a224d3f2674129adea36a46",
+    "semantic_hash": "69c050388a224d3f2674129adea36a46"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/has-usable-llm.ts": {
+    "mtime": 1780540749.8678844,
+    "ast_hash": "2bc1bd22aeb978ad37a402e0a008c56a",
+    "semantic_hash": "2bc1bd22aeb978ad37a402e0a008c56a"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/image-caption-pipeline.test.ts": {
+    "mtime": 1780540749.868004,
+    "ast_hash": "64f274c0ec0e9890248b58638520b971",
+    "semantic_hash": "64f274c0ec0e9890248b58638520b971"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/image-caption-pipeline.ts": {
+    "mtime": 1780540749.86812,
+    "ast_hash": "c8f731608e53bbfe08abcd6e7875a1dc",
+    "semantic_hash": "c8f731608e53bbfe08abcd6e7875a1dc"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/ingest-cache.test.ts": {
+    "mtime": 1780540749.8682175,
+    "ast_hash": "06edc83675d001d31a4e23d9577afdb5",
+    "semantic_hash": "06edc83675d001d31a4e23d9577afdb5"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/ingest-cache.ts": {
+    "mtime": 1780540749.8683116,
+    "ast_hash": "9f6d1a45d5eb2f06695bfddb4fc7d01f",
+    "semantic_hash": "9f6d1a45d5eb2f06695bfddb4fc7d01f"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/ingest-parse.test.ts": {
+    "mtime": 1780540749.8684406,
+    "ast_hash": "7bc18b470f3d98136a51ea2e4e5f3129",
+    "semantic_hash": "7bc18b470f3d98136a51ea2e4e5f3129"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/ingest-queue.integration.test.ts": {
+    "mtime": 1780540749.8685808,
+    "ast_hash": "2c7406da1a36adc91bea6543f006f6d8",
+    "semantic_hash": "2c7406da1a36adc91bea6543f006f6d8"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/ingest-queue.test.ts": {
+    "mtime": 1780540749.868728,
+    "ast_hash": "72a0e4c0a760d6397376abf4e9a5e72b",
+    "semantic_hash": "72a0e4c0a760d6397376abf4e9a5e72b"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/ingest-queue.ts": {
+    "mtime": 1780540749.8688452,
+    "ast_hash": "04bd5e962680cd3e962c2e681b8eb95e",
+    "semantic_hash": "04bd5e962680cd3e962c2e681b8eb95e"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/ingest-sanitize.test.ts": {
+    "mtime": 1780540749.8689811,
+    "ast_hash": "751290a095e678c067d62525e6755ea5",
+    "semantic_hash": "751290a095e678c067d62525e6755ea5"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/ingest-sanitize.ts": {
+    "mtime": 1780540749.8690884,
+    "ast_hash": "eec84e9b93397f85e5c64280a1b10669",
+    "semantic_hash": "eec84e9b93397f85e5c64280a1b10669"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/ingest-source-path-collision.test.ts": {
+    "mtime": 1780540749.8691812,
+    "ast_hash": "a009a7edc7c87402f66f6a88fd891de5",
+    "semantic_hash": "a009a7edc7c87402f66f6a88fd891de5"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/ingest.prompt.test.ts": {
+    "mtime": 1780540749.8693016,
+    "ast_hash": "59e5ce43cf65bee8d482d8b49ab268bd",
+    "semantic_hash": "59e5ce43cf65bee8d482d8b49ab268bd"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/ingest.real-llm.test.ts": {
+    "mtime": 1780540749.869414,
+    "ast_hash": "a2d8e8943d47b8c9d0ea9c1ae0ce3810",
+    "semantic_hash": "a2d8e8943d47b8c9d0ea9c1ae0ce3810"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/ingest.scenarios.test.ts": {
+    "mtime": 1780540749.8695443,
+    "ast_hash": "aa0e9c9abe0fae9637745e35c71275db",
+    "semantic_hash": "aa0e9c9abe0fae9637745e35c71275db"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/ingest.ts": {
+    "mtime": 1780540749.8699863,
+    "ast_hash": "0e848c01c97cef5dd0eaabd0f6097694",
+    "semantic_hash": "0e848c01c97cef5dd0eaabd0f6097694"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/keyboard-utils.test.ts": {
+    "mtime": 1780540749.8701015,
+    "ast_hash": "635652913a2f7c09c08b2682af107cec",
+    "semantic_hash": "635652913a2f7c09c08b2682af107cec"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/keyboard-utils.ts": {
+    "mtime": 1780540749.870183,
+    "ast_hash": "6b625e1f781c1f04ce07f5348469a871",
+    "semantic_hash": "6b625e1f781c1f04ce07f5348469a871"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/language-metadata.test.ts": {
+    "mtime": 1780540749.8702629,
+    "ast_hash": "bed37e571b8d51405b3a635d62f6a80e",
+    "semantic_hash": "bed37e571b8d51405b3a635d62f6a80e"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/language-metadata.ts": {
+    "mtime": 1780540749.870344,
+    "ast_hash": "6fa3ca7ac1148b31f53fb660c4b3a5b9",
+    "semantic_hash": "6fa3ca7ac1148b31f53fb660c4b3a5b9"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/latex-to-unicode.ts": {
+    "mtime": 1780540749.8704298,
+    "ast_hash": "23d7d772b5d3181373e5903c7b2de46e",
+    "semantic_hash": "23d7d772b5d3181373e5903c7b2de46e"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/lint.real-llm.test.ts": {
+    "mtime": 1780540749.8705509,
+    "ast_hash": "1ace4cc66ae902343783ddbd1276b0c8",
+    "semantic_hash": "1ace4cc66ae902343783ddbd1276b0c8"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/lint.scenarios.test.ts": {
+    "mtime": 1780540749.8706574,
+    "ast_hash": "4833228f274d088fa0b2b780c2393120",
+    "semantic_hash": "4833228f274d088fa0b2b780c2393120"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/lint.test.ts": {
+    "mtime": 1780540749.8707638,
+    "ast_hash": "b2964a1b2b532aca8536d250f8883e27",
+    "semantic_hash": "b2964a1b2b532aca8536d250f8883e27"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/lint.ts": {
+    "mtime": 1780540749.8709006,
+    "ast_hash": "6d61a0bdd983dd9807cdff6cf7975741",
+    "semantic_hash": "6d61a0bdd983dd9807cdff6cf7975741"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/llm-client.real-llm.test.ts": {
+    "mtime": 1780540749.8710163,
+    "ast_hash": "066f2ddb5a7fe479b26bc3a1e272c893",
+    "semantic_hash": "066f2ddb5a7fe479b26bc3a1e272c893"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/llm-client.test.ts": {
+    "mtime": 1780540749.8710983,
+    "ast_hash": "cbd1373edbdb5567c0ed1e3f6cef56f8",
+    "semantic_hash": "cbd1373edbdb5567c0ed1e3f6cef56f8"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/llm-client.ts": {
+    "mtime": 1780540749.8712754,
+    "ast_hash": "b920f23e2f3e09a015fc22d03dca021f",
+    "semantic_hash": "b920f23e2f3e09a015fc22d03dca021f"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/llm-providers.test.ts": {
+    "mtime": 1780540749.8713858,
+    "ast_hash": "c7731acce56c760943dd40292df5134a",
+    "semantic_hash": "c7731acce56c760943dd40292df5134a"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/llm-providers.ts": {
+    "mtime": 1780540749.8720045,
+    "ast_hash": "76dd16b7568d18c659bc58b43787072e",
+    "semantic_hash": "76dd16b7568d18c659bc58b43787072e"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/markdown-image-resolver.test.ts": {
+    "mtime": 1780540749.8723054,
+    "ast_hash": "62c9306e63dc46098d6f93e377da83b4",
+    "semantic_hash": "62c9306e63dc46098d6f93e377da83b4"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/markdown-image-resolver.ts": {
+    "mtime": 1780540749.872407,
+    "ast_hash": "c1b0984f92aadc257602a86a81a85572",
+    "semantic_hash": "c1b0984f92aadc257602a86a81a85572"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/optimize-research-topic.test.ts": {
+    "mtime": 1780540749.8725178,
+    "ast_hash": "8556f937261dd6e871bc7f671790a85f",
+    "semantic_hash": "8556f937261dd6e871bc7f671790a85f"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/optimize-research-topic.ts": {
+    "mtime": 1780540749.8726192,
+    "ast_hash": "b95a55296d226af776fdb9fe464babf3",
+    "semantic_hash": "b95a55296d226af776fdb9fe464babf3"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/output-language-options.ts": {
+    "mtime": 1780540749.87273,
+    "ast_hash": "1ffae35df4f4ed960aa218af8f415d77",
+    "semantic_hash": "1ffae35df4f4ed960aa218af8f415d77"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/output-language.test.ts": {
+    "mtime": 1780540749.8728516,
+    "ast_hash": "58deb82c2c1afd19a38911fac1d285a3",
+    "semantic_hash": "58deb82c2c1afd19a38911fac1d285a3"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/output-language.ts": {
+    "mtime": 1780540749.8729386,
+    "ast_hash": "ee4b0e5ee9f91b5a2c31e9ddd2d8bdb0",
+    "semantic_hash": "ee4b0e5ee9f91b5a2c31e9ddd2d8bdb0"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/page-merge.test.ts": {
+    "mtime": 1780540749.8731167,
+    "ast_hash": "0ba7ce0e3c183722435aa30679cc6bbe",
+    "semantic_hash": "0ba7ce0e3c183722435aa30679cc6bbe"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/page-merge.ts": {
+    "mtime": 1780540749.8733368,
+    "ast_hash": "f1eaf185d29d787526e2b56921c70061",
+    "semantic_hash": "f1eaf185d29d787526e2b56921c70061"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/path-utils.property.test.ts": {
+    "mtime": 1780540749.8734925,
+    "ast_hash": "20439837c72dc2b8cae0357035b738b5",
+    "semantic_hash": "20439837c72dc2b8cae0357035b738b5"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/path-utils.test.ts": {
+    "mtime": 1780540749.8736336,
+    "ast_hash": "f7e4594af2e41d93a1870727221a2934",
+    "semantic_hash": "f7e4594af2e41d93a1870727221a2934"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/path-utils.ts": {
+    "mtime": 1780540749.8737454,
+    "ast_hash": "3c6c9823e3e08cbe5f74a7effbf3f72f",
+    "semantic_hash": "3c6c9823e3e08cbe5f74a7effbf3f72f"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/persist.integration.test.ts": {
+    "mtime": 1780540749.8738961,
+    "ast_hash": "ee6622b93f5b9d6b7d5d4d0975d35385",
+    "semantic_hash": "ee6622b93f5b9d6b7d5d4d0975d35385"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/persist.ts": {
+    "mtime": 1780540749.8740208,
+    "ast_hash": "741a95f372a0024257ff95f5d33ed379",
+    "semantic_hash": "741a95f372a0024257ff95f5d33ed379"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/project-file-sync.test.ts": {
+    "mtime": 1780540749.8741448,
+    "ast_hash": "613b06c6ee8adaadba34355b2b5d147c",
+    "semantic_hash": "613b06c6ee8adaadba34355b2b5d147c"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/project-file-sync.ts": {
+    "mtime": 1780540749.8746448,
+    "ast_hash": "cd06b6efc6c3b84648dde2dad73fbca5",
+    "semantic_hash": "cd06b6efc6c3b84648dde2dad73fbca5"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/project-identity.ts": {
+    "mtime": 1780540749.8747673,
+    "ast_hash": "1f5be43fadca1c84c46c57b718f4c6c7",
+    "semantic_hash": "1f5be43fadca1c84c46c57b718f4c6c7"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/project-mutex.test.ts": {
+    "mtime": 1780540749.8748763,
+    "ast_hash": "15354463abd08518bfc2612032785d32",
+    "semantic_hash": "15354463abd08518bfc2612032785d32"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/project-mutex.ts": {
+    "mtime": 1780540749.8749638,
+    "ast_hash": "0c5469055424bb2f57178e8fefb00eaf",
+    "semantic_hash": "0c5469055424bb2f57178e8fefb00eaf"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/project-store.ts": {
+    "mtime": 1780540749.8750901,
+    "ast_hash": "601dac1b456371379514cdc6b73006aa",
+    "semantic_hash": "601dac1b456371379514cdc6b73006aa"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/proxy-config.test.ts": {
+    "mtime": 1780540749.8751771,
+    "ast_hash": "4aed2ede91e37374fafa0fcc5a6c9feb",
+    "semantic_hash": "4aed2ede91e37374fafa0fcc5a6c9feb"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/proxy-config.ts": {
+    "mtime": 1780540749.8752637,
+    "ast_hash": "afd7f107a75953bc88a1c08432fa2ffd",
+    "semantic_hash": "afd7f107a75953bc88a1c08432fa2ffd"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/raw-source-resolver.test.ts": {
+    "mtime": 1780540749.8753467,
+    "ast_hash": "b32c501d47ead181f2d70668f5805614",
+    "semantic_hash": "b32c501d47ead181f2d70668f5805614"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/raw-source-resolver.ts": {
+    "mtime": 1780540749.8754425,
+    "ast_hash": "3e78754e675c94eb49d767e2dc7f6980",
+    "semantic_hash": "3e78754e675c94eb49d767e2dc7f6980"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/reasoning-detector.test.ts": {
+    "mtime": 1780540749.875538,
+    "ast_hash": "2876a390daeacd5db81a78b3f45f1768",
+    "semantic_hash": "2876a390daeacd5db81a78b3f45f1768"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/reasoning-detector.ts": {
+    "mtime": 1780540749.8756273,
+    "ast_hash": "7d6c4f0d28f6324cad7cfff50203dcc5",
+    "semantic_hash": "7d6c4f0d28f6324cad7cfff50203dcc5"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/reset-project-state.test.ts": {
+    "mtime": 1780540749.875729,
+    "ast_hash": "f01a824be5eb760d50a36a56caf21b0a",
+    "semantic_hash": "f01a824be5eb760d50a36a56caf21b0a"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/reset-project-state.ts": {
+    "mtime": 1780540749.87581,
+    "ast_hash": "e9411848d8d47cd8f96b1a2f6db26e3b",
+    "semantic_hash": "e9411848d8d47cd8f96b1a2f6db26e3b"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/review-utils.property.test.ts": {
+    "mtime": 1780540749.875899,
+    "ast_hash": "856179d2cd6967e9a26268e5fd712c81",
+    "semantic_hash": "856179d2cd6967e9a26268e5fd712c81"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/review-utils.test.ts": {
+    "mtime": 1780540749.8759756,
+    "ast_hash": "f5f8c95ceeff5139b2aa73e68a4e1434",
+    "semantic_hash": "f5f8c95ceeff5139b2aa73e68a4e1434"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/review-utils.ts": {
+    "mtime": 1780540749.8760495,
+    "ast_hash": "c8f95791521910957e76c107fd97ff8b",
+    "semantic_hash": "c8f95791521910957e76c107fd97ff8b"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/scheduled-import.test.ts": {
+    "mtime": 1780540749.8761497,
+    "ast_hash": "42453fbcaef3385dc631229eaf359f6b",
+    "semantic_hash": "42453fbcaef3385dc631229eaf359f6b"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/scheduled-import.ts": {
+    "mtime": 1780540749.8762736,
+    "ast_hash": "27e30a6cfe422c34e24bdf5b32bcce0f",
+    "semantic_hash": "27e30a6cfe422c34e24bdf5b32bcce0f"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/search-rrf.test.ts": {
+    "mtime": 1780540749.8763733,
+    "ast_hash": "c95310d41e2558c69297c4edcb874567",
+    "semantic_hash": "c95310d41e2558c69297c4edcb874567"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/search.scenarios.test.ts": {
+    "mtime": 1780540749.8764498,
+    "ast_hash": "514ab4cc7f377bfba2bfb90f8621e4ac",
+    "semantic_hash": "514ab4cc7f377bfba2bfb90f8621e4ac"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/search.ts": {
+    "mtime": 1780540749.876549,
+    "ast_hash": "a519deab47676816437e3524f147fe79",
+    "semantic_hash": "a519deab47676816437e3524f147fe79"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/source-delete-decision.test.ts": {
+    "mtime": 1780540749.8766496,
+    "ast_hash": "3e7365780dcaa92c248a430097d4c3db",
+    "semantic_hash": "3e7365780dcaa92c248a430097d4c3db"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/source-delete-decision.ts": {
+    "mtime": 1780540749.8767283,
+    "ast_hash": "4437ddef36cc62937715e0466c255478",
+    "semantic_hash": "4437ddef36cc62937715e0466c255478"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/source-identity.test.ts": {
+    "mtime": 1780540749.8768067,
+    "ast_hash": "9b3b33bed23341f296f5d72e49ed535c",
+    "semantic_hash": "9b3b33bed23341f296f5d72e49ed535c"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/source-identity.ts": {
+    "mtime": 1780540749.876887,
+    "ast_hash": "6fc73d0db4a1d29554bf0df496163826",
+    "semantic_hash": "6fc73d0db4a1d29554bf0df496163826"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/source-lifecycle-delete.test.ts": {
+    "mtime": 1780540749.876963,
+    "ast_hash": "13b976066bd9e56ab4a18607c1dc74c7",
+    "semantic_hash": "13b976066bd9e56ab4a18607c1dc74c7"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/source-lifecycle.test.ts": {
+    "mtime": 1780540749.8770542,
+    "ast_hash": "4ee0476713f1f62bd8977e367de8d64d",
+    "semantic_hash": "4ee0476713f1f62bd8977e367de8d64d"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/source-lifecycle.ts": {
+    "mtime": 1780540749.877182,
+    "ast_hash": "72259f6867c8c059ac5c5a2c7b7e492c",
+    "semantic_hash": "72259f6867c8c059ac5c5a2c7b7e492c"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/source-watch-config.test.ts": {
+    "mtime": 1780540749.8772633,
+    "ast_hash": "b84dd49b55f63ff8318c649498b38041",
+    "semantic_hash": "b84dd49b55f63ff8318c649498b38041"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/source-watch-config.ts": {
+    "mtime": 1780540749.8773687,
+    "ast_hash": "15c4f528439f3f0519f7eada2376cdcf",
+    "semantic_hash": "15c4f528439f3f0519f7eada2376cdcf"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/source-watch-defaults.json": {
+    "mtime": 1780540749.8774438,
+    "ast_hash": "f63bec5735d58745ce6637aee2728bab",
+    "semantic_hash": "f63bec5735d58745ce6637aee2728bab"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/sources-merge.test.ts": {
+    "mtime": 1780540749.8775547,
+    "ast_hash": "b690f342086d6fd591d26d3a039fc991",
+    "semantic_hash": "b690f342086d6fd591d26d3a039fc991"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/sources-merge.ts": {
+    "mtime": 1780540749.8776686,
+    "ast_hash": "80965314be70b6604e4b6cbc26ae8d8d",
+    "semantic_hash": "80965314be70b6604e4b6cbc26ae8d8d"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/sources-tree-delete.test.ts": {
+    "mtime": 1780540749.8777657,
+    "ast_hash": "718e598c3375f5f526493856784df1cd",
+    "semantic_hash": "718e598c3375f5f526493856784df1cd"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/sources-tree-delete.ts": {
+    "mtime": 1780540749.877841,
+    "ast_hash": "e7fea8b5ac7888697b460834b78dd050",
+    "semantic_hash": "e7fea8b5ac7888697b460834b78dd050"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/sweep-chained.real-llm.test.ts": {
+    "mtime": 1780540749.8779688,
+    "ast_hash": "d14d8d20644c5dc94a52d2f1376abeae",
+    "semantic_hash": "d14d8d20644c5dc94a52d2f1376abeae"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/sweep-reviews.property.test.ts": {
+    "mtime": 1780540749.8780448,
+    "ast_hash": "ead6c96b6f06aaa617ad253d5375cc17",
+    "semantic_hash": "ead6c96b6f06aaa617ad253d5375cc17"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/sweep-reviews.race.test.ts": {
+    "mtime": 1780540749.8781626,
+    "ast_hash": "a639ce662ab96775e20a0a909c762c8a",
+    "semantic_hash": "a639ce662ab96775e20a0a909c762c8a"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/sweep-reviews.real-llm.test.ts": {
+    "mtime": 1780540749.8782477,
+    "ast_hash": "dd25d9f8805fc6f1a000c695b265a4bf",
+    "semantic_hash": "dd25d9f8805fc6f1a000c695b265a4bf"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/sweep-reviews.scenarios.test.ts": {
+    "mtime": 1780540749.8783565,
+    "ast_hash": "4e76b8eec26c2561e26c8e202e4abb1c",
+    "semantic_hash": "4e76b8eec26c2561e26c8e202e4abb1c"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/sweep-reviews.test.ts": {
+    "mtime": 1780540749.8784494,
+    "ast_hash": "da7128eeac54157c46faa2dc01d96fd6",
+    "semantic_hash": "da7128eeac54157c46faa2dc01d96fd6"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/sweep-reviews.ts": {
+    "mtime": 1780540749.87872,
+    "ast_hash": "049d8f7805f90482d7c65be781419f03",
+    "semantic_hash": "049d8f7805f90482d7c65be781419f03"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/tauri-fetch.test.ts": {
+    "mtime": 1780540749.878823,
+    "ast_hash": "efcc263a6b9f0989ffb5f5d78bbc1f05",
+    "semantic_hash": "efcc263a6b9f0989ffb5f5d78bbc1f05"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/tauri-fetch.ts": {
+    "mtime": 1780540749.8789065,
+    "ast_hash": "15d6d176e868736f4a7a7abe50af9d68",
+    "semantic_hash": "15d6d176e868736f4a7a7abe50af9d68"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/templates.ts": {
+    "mtime": 1780540749.879046,
+    "ast_hash": "dbd2342baa58414f2119df250fc04ee9",
+    "semantic_hash": "dbd2342baa58414f2119df250fc04ee9"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/text-chunker.test.ts": {
+    "mtime": 1780540749.8791583,
+    "ast_hash": "9f173c0c17e35c8493388ef1d3d1dacf",
+    "semantic_hash": "9f173c0c17e35c8493388ef1d3d1dacf"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/text-chunker.ts": {
+    "mtime": 1780540749.8792875,
+    "ast_hash": "29d69d594b9bf5dd63491774c0b68b35",
+    "semantic_hash": "29d69d594b9bf5dd63491774c0b68b35"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/theme.ts": {
+    "mtime": 1780540749.879527,
+    "ast_hash": "3c3187a70c90edff803d2c8ac56b31c4",
+    "semantic_hash": "3c3187a70c90edff803d2c8ac56b31c4"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/update-check.test.ts": {
+    "mtime": 1780540749.8796434,
+    "ast_hash": "1998c5705f5cab14422d75edec5a1e41",
+    "semantic_hash": "1998c5705f5cab14422d75edec5a1e41"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/update-check.ts": {
+    "mtime": 1780540749.879765,
+    "ast_hash": "65a30d35dc54b8895bf2b9993195d965",
+    "semantic_hash": "65a30d35dc54b8895bf2b9993195d965"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/utils.ts": {
+    "mtime": 1780540749.879846,
+    "ast_hash": "5a6fd53fdcf2be529e9cc0b718fde352",
+    "semantic_hash": "5a6fd53fdcf2be529e9cc0b718fde352"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/vision-caption.real-llm.test.ts": {
+    "mtime": 1780540749.8799345,
+    "ast_hash": "4d55d0213b619c11df84109ae8265d48",
+    "semantic_hash": "4d55d0213b619c11df84109ae8265d48"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/vision-caption.test.ts": {
+    "mtime": 1780540749.8800528,
+    "ast_hash": "0b09810aa736723cca7086ab02b61829",
+    "semantic_hash": "0b09810aa736723cca7086ab02b61829"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/vision-caption.ts": {
+    "mtime": 1780540749.880194,
+    "ast_hash": "c4c8c6f6d1c3f889653629e2e378b250",
+    "semantic_hash": "c4c8c6f6d1c3f889653629e2e378b250"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/vision.real-llm.test.ts": {
+    "mtime": 1780540749.8803186,
+    "ast_hash": "4af6a4366e8bfd6f09223a444b17989c",
+    "semantic_hash": "4af6a4366e8bfd6f09223a444b17989c"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/web-search.test.ts": {
+    "mtime": 1780540749.8804488,
+    "ast_hash": "be7ec8dd1f466c04985d92d7b610abb8",
+    "semantic_hash": "be7ec8dd1f466c04985d92d7b610abb8"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/web-search.ts": {
+    "mtime": 1780540749.8807127,
+    "ast_hash": "07fb93993d4e4a9a1d6a79cbbe405c42",
+    "semantic_hash": "07fb93993d4e4a9a1d6a79cbbe405c42"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/wiki-cleanup.test.ts": {
+    "mtime": 1780540749.8808222,
+    "ast_hash": "4a432f7be2218992a7829177146033e8",
+    "semantic_hash": "4a432f7be2218992a7829177146033e8"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/wiki-cleanup.ts": {
+    "mtime": 1780540749.8809493,
+    "ast_hash": "46ddb4f4034485c7e8782ee927df0920",
+    "semantic_hash": "46ddb4f4034485c7e8782ee927df0920"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/wiki-filename.test.ts": {
+    "mtime": 1780540749.8810625,
+    "ast_hash": "89b4b45472512f488d54aa2428d3198e",
+    "semantic_hash": "89b4b45472512f488d54aa2428d3198e"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/wiki-filename.ts": {
+    "mtime": 1780540749.8811426,
+    "ast_hash": "311cf960d290753e8afe043934eaa918",
+    "semantic_hash": "311cf960d290753e8afe043934eaa918"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/wiki-graph.ts": {
+    "mtime": 1780540749.8812776,
+    "ast_hash": "09782ea1b7e6b0b8ba82f1da63725147",
+    "semantic_hash": "09782ea1b7e6b0b8ba82f1da63725147"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/wiki-page-delete.test.ts": {
+    "mtime": 1780540749.8813777,
+    "ast_hash": "e834026d605713afde7690b2a217453c",
+    "semantic_hash": "e834026d605713afde7690b2a217453c"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/wiki-page-delete.ts": {
+    "mtime": 1780540749.8815074,
+    "ast_hash": "b935cf910e502cf47b61169003d62770",
+    "semantic_hash": "b935cf910e502cf47b61169003d62770"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/wiki-page-resolver.test.ts": {
+    "mtime": 1780540749.8816023,
+    "ast_hash": "89395f7161315d9d743088ae4854cdd7",
+    "semantic_hash": "89395f7161315d9d743088ae4854cdd7"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/wiki-page-resolver.ts": {
+    "mtime": 1780540749.8817117,
+    "ast_hash": "e665cbde4c70e8fa189ae27ce4d33775",
+    "semantic_hash": "e665cbde4c70e8fa189ae27ce4d33775"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/wiki-page-types.test.ts": {
+    "mtime": 1780540749.8817928,
+    "ast_hash": "f1f9a95ebf4666d00f2498420ae6dd1d",
+    "semantic_hash": "f1f9a95ebf4666d00f2498420ae6dd1d"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/wiki-page-types.ts": {
+    "mtime": 1780540749.8818774,
+    "ast_hash": "0866605991b50f80590ab35c9d957bb7",
+    "semantic_hash": "0866605991b50f80590ab35c9d957bb7"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/wiki-type-style.test.ts": {
+    "mtime": 1780540749.8819623,
+    "ast_hash": "0bc20240788dbb27ec4cf080f6076e5d",
+    "semantic_hash": "0bc20240788dbb27ec4cf080f6076e5d"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/wiki-type-style.ts": {
+    "mtime": 1780540749.8820422,
+    "ast_hash": "1158ac2b31362a8d84731945851adffc",
+    "semantic_hash": "1158ac2b31362a8d84731945851adffc"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/wikilink-transform.test.ts": {
+    "mtime": 1780540749.8821375,
+    "ast_hash": "a05d07310f431ab1a6cf5958c0bfafad",
+    "semantic_hash": "a05d07310f431ab1a6cf5958c0bfafad"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/lib/wikilink-transform.ts": {
+    "mtime": 1780540749.8822224,
+    "ast_hash": "b441de5bd8032c7e6289fbf5463c52b0",
+    "semantic_hash": "b441de5bd8032c7e6289fbf5463c52b0"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/main.tsx": {
+    "mtime": 1780540749.8823023,
+    "ast_hash": "6a91f2d8f4069811558dac86f55474f7",
+    "semantic_hash": "6a91f2d8f4069811558dac86f55474f7"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/stores/activity-store.ts": {
+    "mtime": 1780540749.88243,
+    "ast_hash": "e5b500831389ffece5ce76886a1fa3b5",
+    "semantic_hash": "e5b500831389ffece5ce76886a1fa3b5"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/stores/chat-store.ts": {
+    "mtime": 1780540749.8825352,
+    "ast_hash": "82a98382b93ba6599d084f417059e05c",
+    "semantic_hash": "82a98382b93ba6599d084f417059e05c"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/stores/file-sync-store.ts": {
+    "mtime": 1780540749.8826032,
+    "ast_hash": "00b774b954717240c1ca76429cbc1c4a",
+    "semantic_hash": "00b774b954717240c1ca76429cbc1c4a"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/stores/lint-store.test.ts": {
+    "mtime": 1780540749.8826995,
+    "ast_hash": "395d701d67bd241cc10f6d2fede4f5c1",
+    "semantic_hash": "395d701d67bd241cc10f6d2fede4f5c1"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/stores/lint-store.ts": {
+    "mtime": 1780540749.882775,
+    "ast_hash": "d05949d416a24c5006e9004fd63df015",
+    "semantic_hash": "d05949d416a24c5006e9004fd63df015"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/stores/research-store.ts": {
+    "mtime": 1780540749.8828506,
+    "ast_hash": "1fa2ebc59536f6d38ee1f6e9bfaae2b5",
+    "semantic_hash": "1fa2ebc59536f6d38ee1f6e9bfaae2b5"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/stores/review-store.property.test.ts": {
+    "mtime": 1780540749.8829422,
+    "ast_hash": "3148282d1a3e2061bef3f57b1af63dee",
+    "semantic_hash": "3148282d1a3e2061bef3f57b1af63dee"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/stores/review-store.test.ts": {
+    "mtime": 1780540749.8830495,
+    "ast_hash": "bed191bf873b92d1853d24e0ce8c7860",
+    "semantic_hash": "bed191bf873b92d1853d24e0ce8c7860"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/stores/review-store.ts": {
+    "mtime": 1780540749.8831344,
+    "ast_hash": "1efc9c96e69b55e18d0a307d8230aab7",
+    "semantic_hash": "1efc9c96e69b55e18d0a307d8230aab7"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/stores/update-store.ts": {
+    "mtime": 1780540749.8832126,
+    "ast_hash": "57724c4339b7f1b7fe47731b9c01f618",
+    "semantic_hash": "57724c4339b7f1b7fe47731b9c01f618"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/stores/wiki-store.ts": {
+    "mtime": 1780540749.8834074,
+    "ast_hash": "556d7b11092ae5f97b11fc5079a59773",
+    "semantic_hash": "556d7b11092ae5f97b11fc5079a59773"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/test-helpers/deferred.ts": {
+    "mtime": 1780540749.8835483,
+    "ast_hash": "7c179f95f68d86048f9ee1a7d4b915ae",
+    "semantic_hash": "7c179f95f68d86048f9ee1a7d4b915ae"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/test-helpers/fs-temp.ts": {
+    "mtime": 1780540749.8836362,
+    "ast_hash": "5b1927a2ad8b7f77db0610363294ee1a",
+    "semantic_hash": "5b1927a2ad8b7f77db0610363294ee1a"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/test-helpers/load-test-env.ts": {
+    "mtime": 1780540749.8837104,
+    "ast_hash": "3855a2ddfb32fb385088fad29d4a6851",
+    "semantic_hash": "3855a2ddfb32fb385088fad29d4a6851"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/test-helpers/mock-stream-chat.ts": {
+    "mtime": 1780540749.8837857,
+    "ast_hash": "0301a59f50e81266333bf68ae9bd8495",
+    "semantic_hash": "0301a59f50e81266333bf68ae9bd8495"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/test-helpers/real-content.ts": {
+    "mtime": 1780540749.8840196,
+    "ast_hash": "6bf16e624a1141c1ca9390f2619e2066",
+    "semantic_hash": "6bf16e624a1141c1ca9390f2619e2066"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/test-helpers/scenarios/enrich-scenarios.ts": {
+    "mtime": 1780540749.884197,
+    "ast_hash": "689f71383a20eca20594dca689a8f3f1",
+    "semantic_hash": "689f71383a20eca20594dca689a8f3f1"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/test-helpers/scenarios/ingest-scenarios.ts": {
+    "mtime": 1780540749.8843217,
+    "ast_hash": "a897a368db78cbafcf82892ea6047644",
+    "semantic_hash": "a897a368db78cbafcf82892ea6047644"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/test-helpers/scenarios/lint-scenarios.ts": {
+    "mtime": 1780540749.8844368,
+    "ast_hash": "5b3a40d1de98462fe5f7b0e959852603",
+    "semantic_hash": "5b3a40d1de98462fe5f7b0e959852603"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/test-helpers/scenarios/materialize.ts": {
+    "mtime": 1780540749.8845387,
+    "ast_hash": "0470a75056622e72c4069f5e2d1e8b90",
+    "semantic_hash": "0470a75056622e72c4069f5e2d1e8b90"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/test-helpers/scenarios/search-scenarios.ts": {
+    "mtime": 1780540749.8846455,
+    "ast_hash": "ebb7e5f05c544055c80ae79b4f091626",
+    "semantic_hash": "ebb7e5f05c544055c80ae79b4f091626"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/test-helpers/scenarios/sweep-scenarios.ts": {
+    "mtime": 1780540749.8847644,
+    "ast_hash": "dbc31dfa371fa1386e759177bbfaacb8",
+    "semantic_hash": "dbc31dfa371fa1386e759177bbfaacb8"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/test-helpers/scenarios/types.ts": {
+    "mtime": 1780540749.8848724,
+    "ast_hash": "bbe4e1cbbfa0cc4d43f5c50e449f63c1",
+    "semantic_hash": "bbe4e1cbbfa0cc4d43f5c50e449f63c1"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/types/wiki.ts": {
+    "mtime": 1780540749.8849995,
+    "ast_hash": "270d3664f6e5f159cd667df611c9cddb",
+    "semantic_hash": "270d3664f6e5f159cd667df611c9cddb"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/vite-env.d.ts": {
+    "mtime": 1780540749.8850915,
+    "ast_hash": "f7099e44dcfb27fc51126ba4679936f4",
+    "semantic_hash": "f7099e44dcfb27fc51126ba4679936f4"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/tsconfig.app.json": {
+    "mtime": 1780540749.8851664,
+    "ast_hash": "d0814b57ddd1b8292df370c78df78838",
+    "semantic_hash": "d0814b57ddd1b8292df370c78df78838"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/tsconfig.json": {
+    "mtime": 1780540749.8852508,
+    "ast_hash": "e4eeb52edfc23c1267938bcc256952cd",
+    "semantic_hash": "e4eeb52edfc23c1267938bcc256952cd"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/tsconfig.node.json": {
+    "mtime": 1780540749.8853223,
+    "ast_hash": "fd32df1e922920eb085c1d20ffd7fd58",
+    "semantic_hash": "fd32df1e922920eb085c1d20ffd7fd58"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/vite.config.ts": {
+    "mtime": 1780540749.8854134,
+    "ast_hash": "b9ea1d756455dc6acd644c3489b1c79d",
+    "semantic_hash": "b9ea1d756455dc6acd644c3489b1c79d"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/.github/workflows/build.yml": {
+    "mtime": 1780540749.7599523,
+    "ast_hash": "8368752af3c9d9d7d58797562347acbb",
+    "semantic_hash": "8368752af3c9d9d7d58797562347acbb"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/.github/workflows/ci.yml": {
+    "mtime": 1780540749.760046,
+    "ast_hash": "abd1818b2a2579e3bf804f5fec1d31a2",
+    "semantic_hash": "abd1818b2a2579e3bf804f5fec1d31a2"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/README.md": {
+    "mtime": 1780540749.7604983,
+    "ast_hash": "88c920de8fe26dc7d09516bf1c297e24",
+    "semantic_hash": "88c920de8fe26dc7d09516bf1c297e24"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/README_CN.md": {
+    "mtime": 1780540749.760651,
+    "ast_hash": "13aadc5477ef533335c3917018b892ae",
+    "semantic_hash": "13aadc5477ef533335c3917018b892ae"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/README_JA.md": {
+    "mtime": 1780540749.7608292,
+    "ast_hash": "d656a3a8b93c72afdede6e14028e3560",
+    "semantic_hash": "d656a3a8b93c72afdede6e14028e3560"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/README_KO.md": {
+    "mtime": 1780540749.760979,
+    "ast_hash": "f0af2d6d03f607eb0ed5a6bc44b23739",
+    "semantic_hash": "f0af2d6d03f607eb0ed5a6bc44b23739"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/extension/popup.html": {
+    "mtime": 1780540749.7784746,
+    "ast_hash": "ad7c2c925e6716070113e1563273756a",
+    "semantic_hash": "ad7c2c925e6716070113e1563273756a"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/index.html": {
+    "mtime": 1780540749.7786784,
+    "ast_hash": "98e8ac7501f33d26c64f88618c3745f7",
+    "semantic_hash": "98e8ac7501f33d26c64f88618c3745f7"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/llm-wiki.md": {
+    "mtime": 1780540749.7788115,
+    "ast_hash": "7953122eebc7aca33db25cd86a89a19a",
+    "semantic_hash": "7953122eebc7aca33db25cd86a89a19a"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/mcp-server/README.md": {
+    "mtime": 1780540749.779082,
+    "ast_hash": "be20b64e787034aab535fd046504a52a",
+    "semantic_hash": "be20b64e787034aab535fd046504a52a"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/plans/multimodal-images.md": {
+    "mtime": 1780540749.7810035,
+    "ast_hash": "3560abc9f8e5a0088ca78481adcffd5a",
+    "semantic_hash": "3560abc9f8e5a0088ca78481adcffd5a"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/assets/1-deepresearch.jpg": {
+    "mtime": 1780540749.7625358,
+    "ast_hash": "6531dbf424f670c63f496a7b2c63a287",
+    "semantic_hash": "6531dbf424f670c63f496a7b2c63a287"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/assets/2-ai_chat.jpg": {
+    "mtime": 1780540749.7639673,
+    "ast_hash": "e31e6b8bc54ad5138e9b02982c848ecc",
+    "semantic_hash": "e31e6b8bc54ad5138e9b02982c848ecc"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/assets/3-knowledge_graph.jpg": {
+    "mtime": 1780540749.7649477,
+    "ast_hash": "96c3b4e523de09d0f492ad9c50bb48a4",
+    "semantic_hash": "96c3b4e523de09d0f492ad9c50bb48a4"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/assets/4-chrome_extension_webclipper.jpg": {
+    "mtime": 1780540749.769279,
+    "ast_hash": "dcbd8faf1a85cadda4b7c9d9c55ffbb9",
+    "semantic_hash": "dcbd8faf1a85cadda4b7c9d9c55ffbb9"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/assets/5-obsidian_compatibility.jpg": {
+    "mtime": 1780540749.770214,
+    "ast_hash": "8e498e2fa35ef82698b6577e2546cec5",
+    "semantic_hash": "8e498e2fa35ef82698b6577e2546cec5"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/assets/kg_community.jpg": {
+    "mtime": 1780540749.7716422,
+    "ast_hash": "e971075eaaee89e0f1885efe11430873",
+    "semantic_hash": "e971075eaaee89e0f1885efe11430873"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/assets/kg_insights.jpg": {
+    "mtime": 1780540749.773254,
+    "ast_hash": "0be33e1dd471cae07aee046df5a6873b",
+    "semantic_hash": "0be33e1dd471cae07aee046df5a6873b"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/assets/llm_wiki_arch.jpg": {
+    "mtime": 1780540749.7753856,
+    "ast_hash": "9fafd5eec6d28ecabfbae2f3bf2eae36",
+    "semantic_hash": "9fafd5eec6d28ecabfbae2f3bf2eae36"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/assets/overview.jpg": {
+    "mtime": 1780540749.7770722,
+    "ast_hash": "4e45d40096e16ae6b36d3a58db0f0253",
+    "semantic_hash": "4e45d40096e16ae6b36d3a58db0f0253"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/extension/icon128.png": {
+    "mtime": 1780540749.77814,
+    "ast_hash": "f3174a1f9e5f1635938c82d9bcba3989",
+    "semantic_hash": "f3174a1f9e5f1635938c82d9bcba3989"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/extension/icon16.png": {
+    "mtime": 1780540749.7782104,
+    "ast_hash": "1e85aa2139c400eb2adb371fdbf0830b",
+    "semantic_hash": "1e85aa2139c400eb2adb371fdbf0830b"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/extension/icon48.png": {
+    "mtime": 1780540749.7782834,
+    "ast_hash": "0fbb4b7fc187d3652746c930cd50fb90",
+    "semantic_hash": "0fbb4b7fc187d3652746c930cd50fb90"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/logo.jpg": {
+    "mtime": 1780540749.7789364,
+    "ast_hash": "0e7331c232f3598996d248ff696944a7",
+    "semantic_hash": "0e7331c232f3598996d248ff696944a7"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src-tauri/icons/128x128.png": {
+    "mtime": 1780540749.7823935,
+    "ast_hash": "f3174a1f9e5f1635938c82d9bcba3989",
+    "semantic_hash": "f3174a1f9e5f1635938c82d9bcba3989"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src-tauri/icons/128x128@2x.png": {
+    "mtime": 1780540749.7825336,
+    "ast_hash": "df0577101234704ad7ee11115ee03733",
+    "semantic_hash": "df0577101234704ad7ee11115ee03733"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src-tauri/icons/32x32.png": {
+    "mtime": 1780540749.782606,
+    "ast_hash": "c64287ec081311eef9635bcd2d2728b5",
+    "semantic_hash": "c64287ec081311eef9635bcd2d2728b5"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src-tauri/icons/icon.png": {
+    "mtime": 1780540749.7835276,
+    "ast_hash": "a1cfbffdbcd5066c8c0ff7050e2c6233",
+    "semantic_hash": "a1cfbffdbcd5066c8c0ff7050e2c6233"
+  },
+  "/Users/leonAI/projects/_my/llm_wiki/src/assets/logo.jpg": {
+    "mtime": 1780540749.8516726,
+    "ast_hash": "0e7331c232f3598996d248ff696944a7",
+    "semantic_hash": "0e7331c232f3598996d248ff696944a7"
+  }
+}
