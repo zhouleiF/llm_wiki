@@ -47,6 +47,13 @@ const SEARCH_PROVIDERS = [
     urlPlaceholder: "https://search.example.com",
     needsApiKey: false,
   },
+  {
+    id: "zhipu",
+    label: "智谱联网搜索",
+    hint: "ZhiPu Web Search Prime (open.bigmodel.cn)",
+    keyPlaceholder: "输入智谱 API Key (open.bigmodel.cn)",
+    needsApiKey: true,
+  },
 ] as const
 
 export function WebSearchSection() {

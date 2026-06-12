@@ -137,8 +137,8 @@ export async function webSearch(
   if (resolved.provider === "none") {
     throw new Error("Web search not configured. Select a search provider in Settings.")
   }
-  if ((resolved.provider === "tavily" || resolved.provider === "serpapi") && !resolved.apiKey) {
-    throw new Error("Web search not configured. Add a Tavily or SerpApi API key in Settings, or select a different provider.")
+  if ((resolved.provider === "tavily" || resolved.provider === "serpapi" || resolved.provider === "zhipu") && !resolved.apiKey) {
+    throw new Error("Web search not configured. Add an API key in Settings, or select a different provider.")
   }
   if (resolved.provider === "searxng" && !resolved.searXngUrl?.trim()) {
     throw new Error("Web search not configured. Add a SearXNG instance URL in Settings.")
@@ -156,6 +156,8 @@ export async function webSearch(
       return searXngSearch(query, resolved.searXngUrl ?? "", maxResults, resolved.searXngCategories ?? ["general"])
     case "ollama":
       return ollamaSearch(query, resolved.apiKey ?? "", maxResults)
+    case "zhipu":
+      return zhipuMcpSearch(query, resolved.apiKey ?? "", maxResults)
     default:
       throw new Error(`Unknown search provider: ${resolved.provider}`)
   }
@@ -238,6 +240,14 @@ function normalizeSearXngResult(item: unknown): WebSearchResult {
     snippet: r.content ?? "",
     source: hostnameFromUrl(url) || r.engine || r.category || "",
   }
+}
+
+/** Coerce unknown values to string (handles arrays, objects, null). */
+function asString(v: unknown): string {
+  if (typeof v === "string") return v
+  if (Array.isArray(v)) return v.map(String).join(", ")
+  if (v != null) return String(v)
+  return ""
 }
 
 function hostnameFromUrl(url: string): string {
@@ -452,4 +462,208 @@ async function ollamaSearch(
         source: hostnameFromUrl(url),
       }
     })
+}
+
+/**
+ * ZhiPu Web Search Prime via MCP streamable-http protocol.
+ * The protocol requires: initialize → initialized notification → tools/call.
+ */
+async function zhipuMcpSearch(
+  query: string,
+  apiKey: string,
+  maxResults: number,
+): Promise<WebSearchResult[]> {
+  const trimmedApiKey = apiKey.trim()
+  if (!trimmedApiKey) {
+    throw new Error("ZhiPu Web Search requires an API key. Add one in Settings.")
+  }
+
+  const endpoint = "https://open.bigmodel.cn/api/mcp/web_search_prime/mcp"
+  const baseHeaders: Record<string, string> = {
+    "Content-Type": "application/json",
+    Accept: "application/json, text/event-stream",
+    Authorization: `Bearer ${trimmedApiKey}`,
+  }
+
+  const httpFetch = await getHttpFetch()
+
+  // Step 1: Initialize MCP session
+  let initResponse: Response
+  try {
+    initResponse = await httpFetch(endpoint, {
+      method: "POST",
+      headers: baseHeaders,
+      body: JSON.stringify({
+        jsonrpc: "2.0",
+        method: "initialize",
+        params: {
+          protocolVersion: "2024-11-05",
+          capabilities: {},
+          clientInfo: { name: "llm-wiki", version: "1.0.0" },
+        },
+        id: 1,
+      }),
+    })
+  } catch (err) {
+    if (isFetchNetworkError(err)) {
+      throw new Error("Network error reaching ZhiPu MCP service. Check your connectivity.")
+    }
+    throw err
+  }
+
+  if (!initResponse.ok) {
+    if (initResponse.status === 401) {
+      throw new Error("ZhiPu API key authentication failed. Check your API key.")
+    }
+    const errorText = await initResponse.text().catch(() => "Unknown error")
+    throw new Error(`ZhiPu MCP init failed (${initResponse.status}): ${errorText}`)
+  }
+
+  // Consume init body so the connection can be reused
+  await initResponse.text().catch(() => {})
+
+  // Extract session ID for subsequent requests
+  const sessionId = initResponse.headers.get("mcp-session-id") ?? initResponse.headers.get("Mcp-Session-Id")
+  const callHeaders = sessionId
+    ? { ...baseHeaders, "mcp-session-id": sessionId }
+    : baseHeaders
+
+  // Send initialized notification (fire-and-forget)
+  await httpFetch(endpoint, {
+    method: "POST",
+    headers: callHeaders,
+    body: JSON.stringify({ jsonrpc: "2.0", method: "notifications/initialized" }),
+  }).catch(() => {})
+
+  // Step 2: Call web_search_prime tool (snake_case name, search_query param)
+  let searchResponse: Response
+  try {
+    searchResponse = await httpFetch(endpoint, {
+      method: "POST",
+      headers: callHeaders,
+      body: JSON.stringify({
+        jsonrpc: "2.0",
+        method: "tools/call",
+        params: {
+          name: "web_search_prime",
+          arguments: { search_query: query },
+        },
+        id: 2,
+      }),
+    })
+  } catch (err) {
+    if (isFetchNetworkError(err)) {
+      throw new Error("Network error during ZhiPu web search. Check your connectivity.")
+    }
+    throw err
+  }
+
+  if (!searchResponse.ok) {
+    const errorText = await searchResponse.text().catch(() => "Unknown error")
+    throw new Error(`ZhiPu web search failed (${searchResponse.status}): ${errorText}`)
+  }
+
+  // Parse MCP response (JSON or SSE)
+  const data = await parseMcpResponse(searchResponse) as {
+    error?: { message?: string; code?: number }
+    result?: {
+      content?: Array<{ type: string; text?: string }>
+    }
+  }
+
+  if (data.error) {
+    throw new Error(`ZhiPu web search error: ${data.error.message ?? JSON.stringify(data.error)}`)
+  }
+
+  const content = data.result?.content
+  if (!content?.length) return []
+
+  // MCP tool results arrive as text content items.
+  // ZhiPu double-encodes: the text field is a JSON string containing another JSON string.
+  // textContent = '"[{\"title\":\"...\",\"link\":\"...\",...}]"'
+  // First parse → string, second parse → actual array.
+  const textContent = content
+    .filter((c) => c.type === "text" && c.text)
+    .map((c) => c.text!)
+    .join("")
+
+  if (!textContent) return []
+
+  let items: unknown[]
+  try {
+    let parsed: unknown = JSON.parse(textContent)
+    // Unwrap double-encoded JSON string
+    if (typeof parsed === "string") parsed = JSON.parse(parsed)
+    const raw = (parsed as Record<string, unknown>)?.text ?? parsed
+    items = Array.isArray(raw) ? raw : [raw]
+  } catch {
+    return [{
+      title: "ZhiPu Search Result",
+      url: "",
+      snippet: textContent.slice(0, 500),
+      source: "zhipu",
+    }]
+  }
+
+  return items.slice(0, maxResults).map((item) => {
+    const r = item as Record<string, unknown>
+    const url = asString(r.link ?? r.url)
+    return {
+      title: asString(r.title) || "Untitled",
+      url,
+      snippet: asString(r.content ?? r.snippet),
+      source: hostnameFromUrl(url) || "zhipu",
+    }
+  })
+}
+
+/**
+ * Parse an MCP streamable-http response. Handles both direct JSON and SSE
+ * (text/event-stream) formats. The ZhiPu SSE format has no space after the
+ * colon: `data:{...}`, `event:message`, `id:1`.
+ */
+async function parseMcpResponse(response: Response): Promise<unknown> {
+  const raw = await response.text()
+
+  // Fast path: try plain JSON first (works for both JSON Content-Type and
+  // cases where the server returns JSON despite advertising SSE)
+  if (raw.trimStart().startsWith("{")) {
+    try {
+      const parsed = JSON.parse(raw)
+      if (parsed.jsonrpc) return parsed
+    } catch { /* not JSON, fall through to SSE */ }
+  }
+
+  // SSE path: events separated by blank lines, data lines prefixed with "data:"
+  let currentData = ""
+  for (const line of raw.split("\n")) {
+    const trimmed = line.trim()
+    if (trimmed === "") {
+      if (currentData) {
+        try {
+          const parsed = JSON.parse(currentData)
+          if (parsed.jsonrpc) return parsed
+        } catch { /* skip */ }
+        currentData = ""
+      }
+      continue
+    }
+    // "data:" or "data: " — both formats exist
+    if (trimmed.startsWith("data:")) {
+      const value = trimmed.length > 5 && trimmed[5] === " "
+        ? trimmed.slice(6)
+        : trimmed.slice(5)
+      currentData = currentData ? currentData + "\n" + value : value
+    }
+    // Skip "event:", "id:", "retry:", comments
+  }
+  // Last event without trailing newline
+  if (currentData) {
+    try {
+      const parsed = JSON.parse(currentData)
+      if (parsed.jsonrpc) return parsed
+    } catch { /* ignore */ }
+  }
+
+  throw new Error(`ZhiPu MCP: unexpected response (${raw.length} chars): ${raw.slice(0, 200)}`)
 }
