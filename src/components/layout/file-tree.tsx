@@ -20,8 +20,8 @@ function TreeNode({ node, depth }: { node: FileNode; depth: number }) {
       <div>
         <button
           onClick={() => setExpanded(!expanded)}
-          className="flex w-full items-center gap-1 py-1 text-sm text-muted-foreground hover:bg-accent/50 hover:text-accent-foreground"
-          style={{ paddingLeft }}
+          className="sticky flex w-full items-center gap-1 bg-background py-1 text-sm text-muted-foreground hover:bg-accent/50 hover:text-accent-foreground"
+          style={{ paddingLeft, top: depth * 28, zIndex: 100 - depth }}
         >
           {expanded ? (
             <ChevronDown className="h-3.5 w-3.5 shrink-0" />

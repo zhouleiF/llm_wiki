@@ -174,7 +174,7 @@ export function KnowledgeTree() {
             <div key={type} className="mb-1">
               <button
                 onClick={() => toggleType(type)}
-                className="flex w-full items-center gap-1.5 rounded-md px-2 py-1.5 text-sm hover:bg-accent/50"
+                className="sticky top-0 z-10 flex w-full items-center gap-1.5 rounded-md border-b border-border bg-background px-2 py-1.5 text-sm hover:bg-accent/50"
               >
                 {isExpanded ? (
                   <ChevronDown className="h-3.5 w-3.5 shrink-0 text-muted-foreground" />
@@ -262,7 +262,7 @@ function RawSourcesSection() {
     <div className="mt-2 border-t pt-2">
       <button
         onClick={() => setExpanded(!expanded)}
-        className="flex w-full items-center gap-1.5 rounded-md px-2 py-1.5 text-sm hover:bg-accent/50"
+        className="sticky top-0 z-10 flex w-full items-center gap-1.5 rounded-md border-b border-border bg-background px-2 py-1.5 text-sm hover:bg-accent/50"
       >
         {expanded ? (
           <ChevronDown className="h-3.5 w-3.5 shrink-0 text-muted-foreground" />
