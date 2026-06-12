@@ -50,28 +50,31 @@ export const useReviewStore = create<ReviewState>((set) => ({
 
   addItems: (items) =>
     set((state) => {
-      // De-dupe against pending items with same type + normalized title (all
-      // 5 types — bulk ingest can re-surface the same contradiction/confirm
-      // from multiple files).
-      // Merge affectedPages / searchQueries / sourcePath instead of duplicating.
+      // De-dupe against ALL existing items (pending AND resolved) by
+      // type + normalized title.  Previous logic only indexed pending
+      // items, so after a user resolved/dismissed an item, a re-ingest
+      // (file watcher, scheduled import, etc.) would re-add it as a
+      // brand-new unresolved copy — making the list look stuck.
       const result = [...state.items]
       const keyFor = (t: string, title: string) => `${t}::${normalizeReviewTitle(title)}`
 
-      // Build index of existing pending items for fast lookup
-      const pendingIndex = new Map<string, number>()
+      // Index ALL items so resolved ones also block duplicates
+      const existingIndex = new Map<string, number>()
       result.forEach((it, idx) => {
-        if (!it.resolved) {
-          pendingIndex.set(keyFor(it.type, it.title), idx)
-        }
+        existingIndex.set(keyFor(it.type, it.title), idx)
       })
 
       for (const incoming of items) {
         const k = keyFor(incoming.type, incoming.title)
-        const existingIdx = pendingIndex.get(k)
+        const existingIdx = existingIndex.get(k)
 
         if (existingIdx !== undefined) {
-          // Merge into existing
           const old = result[existingIdx]
+          if (old.resolved) {
+            // Already processed — skip to prevent re-adding
+            continue
+          }
+          // Merge into existing pending item
           const mergedPages = Array.from(new Set([...(old.affectedPages ?? []), ...(incoming.affectedPages ?? [])]))
           const mergedQueries = Array.from(new Set([...(old.searchQueries ?? []), ...(incoming.searchQueries ?? [])]))
           result[existingIdx] = {
@@ -89,7 +92,7 @@ export const useReviewStore = create<ReviewState>((set) => ({
             createdAt: Date.now(),
           }
           result.push(newItem)
-          pendingIndex.set(k, result.length - 1)
+          existingIndex.set(k, result.length - 1)
         }
       }
 

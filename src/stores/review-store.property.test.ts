@@ -90,7 +90,7 @@ describe("review-store addItems — dedupe invariants", () => {
     )
   })
 
-  it("resolveItem always makes resolved item eligible for a NEW pending item of same key", () => {
+  it("resolved item blocks re-adding the same key via addItems", () => {
     fc.assert(
       fc.property(
         fc.string({ minLength: 1, maxLength: 20 }).filter((s) => s.trim().length > 0),
@@ -109,9 +109,38 @@ describe("review-store addItems — dedupe invariants", () => {
           ])
 
           const all = useReviewStore.getState().items
-          expect(all.length).toBe(2)
-          expect(all.filter((i) => i.resolved)).toHaveLength(1)
-          expect(all.filter((i) => !i.resolved)).toHaveLength(1)
+          // Resolved item blocks re-adding — still just 1 item
+          expect(all.length).toBe(1)
+          expect(all[0].id).toBe(firstId)
+          expect(all[0].resolved).toBe(true)
+        },
+      ),
+    )
+  })
+
+  it("after clearResolved, the same key can be added again", () => {
+    fc.assert(
+      fc.property(
+        fc.string({ minLength: 1, maxLength: 20 }).filter((s) => s.trim().length > 0),
+        typeArb,
+        (title, type) => {
+          useReviewStore.setState({ items: [] })
+
+          useReviewStore.getState().addItems([
+            { type, title, description: "", options: [], affectedPages: ["first.md"] },
+          ])
+          const firstId = useReviewStore.getState().items[0].id
+          useReviewStore.getState().resolveItem(firstId, "auto-resolved")
+          useReviewStore.getState().clearResolved()
+
+          useReviewStore.getState().addItems([
+            { type, title, description: "", options: [], affectedPages: ["second.md"] },
+          ])
+
+          const all = useReviewStore.getState().items
+          expect(all.length).toBe(1)
+          expect(all[0].resolved).toBe(false)
+          expect(all[0].affectedPages).toEqual(["second.md"])
         },
       ),
     )

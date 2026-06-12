@@ -67,16 +67,32 @@ describe("review-store addItems dedupe", () => {
     expect(useReviewStore.getState().items).toHaveLength(2)
   })
 
-  it("does NOT merge into a resolved item (creates a new one)", () => {
+  it("does NOT re-add a resolved item (skips duplicate)", () => {
     const store = useReviewStore.getState()
     store.addItems([makeInput({ title: "Attention" })])
     const oldId = useReviewStore.getState().items[0].id
     store.resolveItem(oldId, "user-resolved")
     store.addItems([makeInput({ title: "Attention", affectedPages: ["new.md"] })])
     const items = useReviewStore.getState().items
-    expect(items).toHaveLength(2)
-    expect(items.find((i) => i.resolved)?.id).toBe(oldId)
-    expect(items.find((i) => !i.resolved)?.affectedPages).toEqual(["new.md"])
+    // Resolved item blocks re-adding the same concept
+    expect(items).toHaveLength(1)
+    expect(items[0].id).toBe(oldId)
+    expect(items[0].resolved).toBe(true)
+  })
+
+  it("re-adds item after clearResolved removes it", () => {
+    const store = useReviewStore.getState()
+    store.addItems([makeInput({ title: "Attention" })])
+    const oldId = useReviewStore.getState().items[0].id
+    store.resolveItem(oldId, "user-resolved")
+    store.clearResolved()
+    expect(useReviewStore.getState().items).toHaveLength(0)
+    // After clearing, the same concept can be added again
+    store.addItems([makeInput({ title: "Attention", affectedPages: ["new.md"] })])
+    const items = useReviewStore.getState().items
+    expect(items).toHaveLength(1)
+    expect(items[0].resolved).toBe(false)
+    expect(items[0].affectedPages).toEqual(["new.md"])
   })
 
   it("covers contradiction type (was previously skipped in dedupe)", () => {
