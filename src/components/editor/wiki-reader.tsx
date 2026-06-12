@@ -10,6 +10,7 @@ import { resolveMarkdownImageSrc } from "@/lib/markdown-image-resolver"
 import { normalizePath } from "@/lib/path-utils"
 import { detectLanguage } from "@/lib/detect-language"
 import { getHtmlLang, getTextDirection } from "@/lib/language-metadata"
+import { openUrl } from "@tauri-apps/plugin-opener"
 import { useWikiStore } from "@/stores/wiki-store"
 import { MermaidDiagram, unwrapMermaidPre } from "@/components/mermaid-diagram"
 
@@ -42,6 +43,13 @@ export function WikiReader({ body }: WikiReaderProps) {
   const wikiRoot = projectPath ? `${projectPath}/wiki` : null
 
   function handleAnchorClick(e: React.MouseEvent<HTMLAnchorElement>, href: string) {
+    // External URLs → open in default system browser
+    if (/^https?:\/\//i.test(href)) {
+      e.preventDefault()
+      openUrl(href)
+      return
+    }
+    // Internal wikilinks (#slug) → navigate within app
     if (!href.startsWith("#")) return
     e.preventDefault()
     if (!wikiRoot) return
@@ -70,14 +78,17 @@ export function WikiReader({ body }: WikiReaderProps) {
           a: ({ href, children, ...props }) => {
             const h = typeof href === "string" ? href : ""
             const isWikilink = h.startsWith("#")
+            const isExternal = /^https?:\/\//i.test(h)
             return (
               <a
                 href={h || undefined}
-                onClick={(e) => isWikilink && handleAnchorClick(e, h)}
+                onClick={(e) => handleAnchorClick(e, h)}
+                target={isExternal ? "_blank" : undefined}
+                rel={isExternal ? "noopener noreferrer" : undefined}
                 className={
                   isWikilink
                     ? "cursor-pointer text-primary underline decoration-primary/40 underline-offset-2 hover:decoration-primary"
-                    : "text-primary underline underline-offset-2"
+                    : "cursor-pointer text-primary underline underline-offset-2"
                 }
                 {...props}
               >
