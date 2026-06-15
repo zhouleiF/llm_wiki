@@ -184,13 +184,9 @@ export function SettingsView() {
   const maxHistoryMessages = useChatStore((s) => s.maxHistoryMessages)
   const setMaxHistoryMessages = useChatStore((s) => s.setMaxHistoryMessages)
   // Drives the red dot next to the "About" row in the settings
-  // sidebar. Uses `hasAvailableUpdate` (NOT `shouldShowUpdateBanner`)
-  // so the indicator remains even after the user dismisses the
-  // top banner — the user explicitly asked for the gear/About dots
-  // to keep showing as a signpost so they can find the update
-  // again later. The top banner stays gated by the dismiss
-  // preference so the more aggressive interruption only fires once
-  // per version.
+  // sidebar. Uses `hasAvailableUpdate` (ignores dismiss state) so
+  // the dot keeps marking an available update as a passive signpost
+  // until the update is installed.
   const updateAvailable = useUpdateStore((s) => hasAvailableUpdate(s))
 
   const [active, setActive] = useState<CategoryId>("llm")

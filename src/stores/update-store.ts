@@ -60,28 +60,3 @@ export function hasAvailableUpdate(state: UpdateStoreState): boolean {
   if (!state.lastResult) return false
   return state.lastResult.kind === "available"
 }
-
-/**
- * Whether the FULL banner (with download CTA + dismiss button) at
- * the top of the app should be shown. Stricter than
- * `hasAvailableUpdate`: ALSO suppresses when the user has
- * dismissed this exact version. Re-appears naturally when a newer
- * release ships because `dismissedVersion` no longer matches
- * `result.remote`.
- *
- * Banner = active interruption; dots = passive presence. Splitting
- * the gates lets dismissing the banner stop the interruption
- * without hiding the way to the update.
- */
-export function shouldShowUpdateBanner(state: UpdateStoreState): boolean {
-  if (!hasAvailableUpdate(state)) return false
-  // `hasAvailableUpdate` already proved kind === "available", so we
-  // can narrow safely here. Type-narrow inside the branch rather
-  // than using `as` so a future refactor of UpdateStatus would
-  // catch up the gating logic too.
-  if (state.lastResult?.kind !== "available") return false
-  if (state.dismissedVersion === state.lastResult.remote) {
-    return false
-  }
-  return true
-}

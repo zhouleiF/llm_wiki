@@ -33,59 +33,6 @@ function App() {
     startClipWatcher()
   }, [])
 
-  // Dev-only helper for visually testing the update-banner UX.
-  // Open dev tools and run:
-  //   __llmwiki_testUpdateBanner()
-  // to inject a fake "available" result into the update store —
-  // banner appears at the top + red dot lights up the gear icon.
-  // Run again with arg `false` (or call setDismissed via the store)
-  // to clear. Gated on `import.meta.env.DEV` so the helper never
-  // ships in production builds.
-  useEffect(() => {
-    if (!import.meta.env.DEV) return
-    ;(async () => {
-      const storeMod = await import("@/stores/update-store")
-      const { useUpdateStore } = storeMod
-      // Expose the live store getter on window so you can inspect
-      // state from devtools when debugging banner behavior.
-      ;(window as unknown as { __llmwiki_updateStore?: typeof useUpdateStore }).__llmwiki_updateStore = useUpdateStore
-      ;(window as unknown as { __llmwiki_testUpdateBanner?: (clear?: boolean) => void }).__llmwiki_testUpdateBanner = (clear = false) => {
-        if (clear) {
-          useUpdateStore.getState().setResult(
-            { kind: "up-to-date", local: __APP_VERSION__, remote: __APP_VERSION__ },
-            Date.now(),
-          )
-          useUpdateStore.getState().setDismissed(null)
-          console.log("[test] update banner cleared")
-          return
-        }
-        useUpdateStore.getState().setResult(
-          {
-            kind: "available",
-            local: __APP_VERSION__,
-            remote: "v999.0.0",
-            release: {
-              name: "v999.0.0 (test)",
-              tag_name: "v999.0.0",
-              body:
-                "Test release for banner-UX verification.\n\n" +
-                "- Bigger red dot on the Settings icon\n" +
-                "- Top banner with one-click dismiss\n" +
-                "- Once dismissed, won't reappear for this version",
-              html_url: "https://github.com/nashsu/llm_wiki/releases",
-              published_at: new Date().toISOString(),
-            },
-          },
-          Date.now(),
-        )
-        useUpdateStore.getState().setDismissed(null)
-        console.log(
-          "[test] update banner injected. Run __llmwiki_testUpdateBanner(true) to clear.",
-        )
-      }
-    })()
-  }, [])
-
   // Background update check — hydrate persisted user preferences, then
   // hit GitHub at most once every UPDATE_CHECK_CACHE_MS. Runs 1.5 s
   // after mount so it doesn't contend with the heaviest startup work

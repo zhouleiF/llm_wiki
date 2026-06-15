@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useCallback } from "react"
 import {
-  FileText, FolderOpen, Search, Network, ClipboardCheck, Settings, ArrowLeftRight, ClipboardList, Globe,
+  FileText, FolderOpen, Search, Network, ClipboardCheck, Settings, ArrowLeftRight, ClipboardList, Globe, FolderTree,
 } from "lucide-react"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import { useWikiStore } from "@/stores/wiki-store"
@@ -8,6 +8,7 @@ import { useReviewStore } from "@/stores/review-store"
 import { useResearchStore } from "@/stores/research-store"
 import { useUpdateStore, hasAvailableUpdate } from "@/stores/update-store"
 import { useTranslation } from "react-i18next"
+import { revealItemInDir } from "@tauri-apps/plugin-opener"
 import logoImg from "@/assets/logo.jpg"
 import type { WikiState } from "@/stores/wiki-store"
 
@@ -30,18 +31,29 @@ export function IconSidebar({ onSwitchProject }: IconSidebarProps) {
   const { t } = useTranslation()
   const activeView = useWikiStore((s) => s.activeView)
   const setActiveView = useWikiStore((s) => s.setActiveView)
+  const project = useWikiStore((s) => s.project)
   const pendingCount = useReviewStore((s) => s.items.filter((i) => !i.resolved).length)
   const researchPanelOpen = useResearchStore((s) => s.panelOpen)
   const researchActiveCount = useResearchStore((s) => s.tasks.filter((t) => t.status !== "done" && t.status !== "error").length)
   const toggleResearchPanel = useResearchStore((s) => s.setPanelOpen)
-  // Use `hasAvailableUpdate` (ignores dismiss state) rather than
-  // `shouldShowUpdateBanner`. The dot is a passive signpost — it
-  // should keep marking the gear as long as the update exists, even
-  // after the user closes the more aggressive top banner. Without
-  // this split, dismissing the banner would silently lose the only
-  // remaining indicator that an update is available, so the user
-  // never finds their way back to it.
+  // `hasAvailableUpdate` ignores dismiss state, so the gear dot keeps
+  // marking an available update until the update is installed — a
+  // passive signpost that survives regardless of dismissal.
   const updateAvailable = useUpdateStore((s) => hasAvailableUpdate(s))
+
+  // Reveal the project root in the OS file manager (Finder / Explorer).
+  // Uses `revealItemInDir` (not `openPath`) because its permission
+  // (`allow-reveal-item-in-dir`) ships in `opener:default`, so it works
+  // without an extra capability or a Rust rebuild. Gated on
+  // `project.path` so a missing project is a silent no-op.
+  const handleOpenRepo = useCallback(async () => {
+    if (!project?.path) return
+    try {
+      await revealItemInDir(project.path)
+    } catch (err) {
+      console.error("[icon-sidebar] revealItemInDir failed:", err)
+    }
+  }, [project])
 
   // Daemon health check
   const [daemonStatus, setDaemonStatus] = useState<string>("starting")
@@ -148,15 +160,10 @@ export function IconSidebar({ onSwitchProject }: IconSidebarProps) {
             >
               <Settings className="h-5 w-5" />
               {updateAvailable && (
-                // Update-available indicator on the Settings gear.
-                // Smaller (8px / `h-2 w-2`) so it doesn't shout —
-                // the top banner is already the loud surface; this
-                // dot is just a quiet "where to go" signpost. Red
-                // (vs. previous primary-blue) gives it enough
-                // visual contrast that it's still noticeable
-                // against the gear icon despite the small size.
-                // Dismissed versions clear it automatically via
-                // shouldShowUpdateBanner.
+                // Update-available indicator on the Settings gear —
+                // a quiet 8px red dot. Red (vs. primary-blue) gives
+                // it enough contrast to stay noticeable against the
+                // gear icon despite the small size.
                 <span
                   className="absolute right-1 top-1 h-2 w-2 rounded-full bg-red-500 ring-2 ring-muted/50"
                   title={t("nav.updateAvailable")}
@@ -167,6 +174,15 @@ export function IconSidebar({ onSwitchProject }: IconSidebarProps) {
               {t("nav.settings")}
               {updateAvailable ? t("nav.updateAvailableSuffix") : ""}
             </TooltipContent>
+          </Tooltip>
+          <Tooltip>
+            <TooltipTrigger
+              onClick={handleOpenRepo}
+              className="flex h-10 w-10 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-accent/50 hover:text-accent-foreground"
+            >
+              <FolderTree className="h-5 w-5" />
+            </TooltipTrigger>
+            <TooltipContent side="right">{t("nav.openRepoFolder")}</TooltipContent>
           </Tooltip>
           <Tooltip>
             <TooltipTrigger

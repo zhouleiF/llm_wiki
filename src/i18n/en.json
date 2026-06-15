@@ -12,13 +12,9 @@
     "review": "Review",
     "settings": "Settings",
     "switchProject": "Switch Project",
+    "openRepoFolder": "Open Repo Folder",
     "updateAvailable": "Update available",
     "updateAvailableSuffix": " · update"
-  },
-  "updateBanner": {
-    "message": "Version {{version}} is available",
-    "openDownload": "Open download page",
-    "dismiss": "Dismiss"
   },
   "welcome": {
     "newProject": "New Project",
