@@ -133,6 +133,20 @@ function processQueue(
   }
 }
 
+/**
+ * Resume processing of queued tasks — e.g. after a dev-mode reload
+ * interrupted in-flight research. Public re-entry into processQueue,
+ * which is otherwise module-private. Callers (handleProjectOpened)
+ * reset interrupted tasks back to "queued" before invoking this.
+ */
+export function resumeResearch(
+  projectPath: string,
+  llmConfig: LlmConfig,
+  searchConfig: SearchApiConfig,
+) {
+  processQueue(projectPath, llmConfig, searchConfig)
+}
+
 async function executeResearch(
   projectPath: string,
   taskId: string,

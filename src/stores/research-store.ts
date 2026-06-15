@@ -1,5 +1,4 @@
 import { create } from "zustand"
-import { persist } from "zustand/middleware"
 import type { WebSearchResult } from "@/lib/web-search"
 
 export interface ResearchTask {
@@ -22,6 +21,7 @@ interface ResearchState {
   addTask: (topic: string) => string
   updateTask: (id: string, updates: Partial<ResearchTask>) => void
   removeTask: (id: string) => void
+  setTasks: (tasks: ResearchTask[]) => void
   clearHistory: () => void
   setPanelOpen: (open: boolean) => void
   getRunningCount: () => number
@@ -30,12 +30,16 @@ interface ResearchState {
 
 let counter = 0
 
-export const useResearchStore = create<ResearchState>()(
-  persist(
-    (set, get) => ({
-      tasks: [],
-      panelOpen: false,
-      maxConcurrent: 3,
+// Pure in-memory store. Research tasks are persisted to disk per-project
+// via @/lib/persist (+ auto-save) and restored in handleProjectOpened.
+// We deliberately do NOT use zustand `persist` here: that wrote to
+// localStorage, which resetProjectState (run on every reload when the
+// last project auto-reopens) overwrote with an empty array — wiping
+// the entire research history, done tasks included.
+export const useResearchStore = create<ResearchState>()((set, get) => ({
+  tasks: [],
+  panelOpen: false,
+  maxConcurrent: 3,
 
   addTask: (topic) => {
     const id = `research-${++counter}`
@@ -68,6 +72,17 @@ export const useResearchStore = create<ResearchState>()(
       tasks: state.tasks.filter((t) => t.id !== id),
     })),
 
+  setTasks: (tasks) => {
+    // Restore counter so ids from rehydrated/persisted tasks never
+    // collide with ids minted by future addTask calls.
+    const maxId = tasks.reduce((max, t) => {
+      const num = parseInt(t.id.replace("research-", ""), 10)
+      return isNaN(num) ? max : Math.max(max, num)
+    }, 0)
+    counter = maxId
+    set({ tasks })
+  },
+
   clearHistory: () =>
     set((state) => ({
       tasks: state.tasks.filter((t) =>
@@ -88,21 +103,4 @@ export const useResearchStore = create<ResearchState>()(
     const { tasks } = get()
     return tasks.find((t) => t.status === "queued")
   },
-}),
-    {
-      name: "research-store",
-      partialize: (state) => ({
-        tasks: state.tasks.filter((t) => t.status === "done" || t.status === "error"),
-      }),
-      onRehydrateStorage: () => (state) => {
-        if (state) {
-          const maxId = state.tasks.reduce((max, t) => {
-            const num = parseInt(t.id.replace("research-", ""), 10)
-            return isNaN(num) ? max : Math.max(max, num)
-          }, 0)
-          counter = maxId
-        }
-      },
-    },
-  ),
-)
+}))

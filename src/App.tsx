@@ -7,9 +7,10 @@ import { useWikiStore } from "@/stores/wiki-store"
 import { useReviewStore } from "@/stores/review-store"
 import { useLintStore } from "@/stores/lint-store"
 import { useChatStore } from "@/stores/chat-store"
+import { useResearchStore } from "@/stores/research-store"
 import { listDirectory, openProject } from "@/commands/fs"
 import { getLastProject, getRecentProjects, saveLastProject, loadLlmConfig, loadLanguage, loadSearchApiConfig, loadEmbeddingConfig, loadMultimodalConfig, loadOutputLanguage, loadProviderConfigs, loadActivePresetId, loadProxyConfig, loadScheduledImportConfig, saveScheduledImportConfig, loadSourceWatchConfig, loadApiConfig, loadGeneralConfig } from "@/lib/project-store"
-import { loadReviewItems, loadLintItems, loadChatHistory } from "@/lib/persist"
+import { loadReviewItems, loadLintItems, loadChatHistory, loadResearchTasks } from "@/lib/persist"
 import { setupAutoSave } from "@/lib/auto-save"
 import { startClipWatcher } from "@/lib/clip-watcher"
 import { AppLayout } from "@/components/layout/app-layout"
@@ -415,6 +416,35 @@ function App() {
         if (sorted[0]) {
           useChatStore.getState().setActiveConversation(sorted[0].id)
         }
+      }
+    } catch {
+      // ignore, start fresh
+    }
+
+    // Restore research history + resume any tasks a dev-mode reload
+    // interrupted. Research is persisted per-project, so this survives
+    // reloads (the old localStorage store was wiped by resetProjectState
+    // on every reload). llmConfig / searchApiConfig are already hydrated
+    // above, so resumed tasks can execute immediately.
+    try {
+      const savedResearch = await loadResearchTasks(proj.path)
+      useResearchStore.getState().setTasks(savedResearch)
+      const interruptedStatuses = ["queued", "searching", "synthesizing", "saving"]
+      const interrupted = savedResearch.filter((t) => interruptedStatuses.includes(t.status))
+      if (interrupted.length > 0) {
+        // Reset interrupted tasks to "queued" and re-run them. Streaming
+        // synthesis can't resume at the exact cutoff, so each is re-executed
+        // from search → synthesize (user-accepted token cost).
+        for (const t of interrupted) {
+          useResearchStore.getState().updateTask(t.id, { status: "queued", synthesis: "", error: null })
+        }
+        useResearchStore.getState().setPanelOpen(true)
+        const { resumeResearch } = await import("@/lib/deep-research")
+        resumeResearch(
+          proj.path,
+          useWikiStore.getState().llmConfig,
+          useWikiStore.getState().searchApiConfig,
+        )
       }
     } catch {
       // ignore, start fresh

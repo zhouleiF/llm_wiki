@@ -2,6 +2,7 @@ import { writeFile, readFile, createDirectory } from "@/commands/fs"
 import type { ReviewItem } from "@/stores/review-store"
 import type { LintItem } from "@/stores/lint-store"
 import type { DisplayMessage, Conversation } from "@/stores/chat-store"
+import type { ResearchTask } from "@/stores/research-store"
 import { normalizePath } from "@/lib/path-utils"
 
 async function ensureDir(projectPath: string): Promise<void> {
@@ -125,5 +126,21 @@ export async function loadChatHistory(projectPath: string): Promise<PersistedCha
     } catch {
       return { conversations: [], messages: [] }
     }
+  }
+}
+
+export async function saveResearchTasks(projectPath: string, tasks: ResearchTask[]): Promise<void> {
+  const pp = normalizePath(projectPath)
+  await ensureDir(pp)
+  await writeFile(`${pp}/.llm-wiki/research.json`, JSON.stringify(tasks, null, 2))
+}
+
+export async function loadResearchTasks(projectPath: string): Promise<ResearchTask[]> {
+  const pp = normalizePath(projectPath)
+  try {
+    const content = await readFile(`${pp}/.llm-wiki/research.json`)
+    return JSON.parse(content) as ResearchTask[]
+  } catch {
+    return []
   }
 }
