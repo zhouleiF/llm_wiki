@@ -187,10 +187,20 @@ async function executeResearch(
       // no index yet
     }
 
+    // Read project purpose to keep research aligned with the wiki's goals
+    let purpose = ""
+    try {
+      purpose = await readFile(`${pp}/purpose.md`)
+    } catch {
+      // no purpose yet
+    }
+
     const systemPrompt = [
       "You are a research assistant. Synthesize the collected research sources into a comprehensive wiki page.",
       "",
       buildLanguageDirective(topic),
+      "",
+      purpose ? `## Project Purpose (keep research aligned with these goals)\n${purpose}` : "",
       "",
       "## Cross-referencing (IMPORTANT)",
       "- The wiki already has existing pages listed in the Wiki Index below.",

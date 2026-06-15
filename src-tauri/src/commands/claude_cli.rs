@@ -252,7 +252,20 @@ pub async fn claude_cli_spawn(
 
     let claude = find_claude_command()?;
     let mut cmd = Command::new(&claude);
-    cmd.arg("-p")
+    // --bare: skip auto-discovery of hooks, skills, plugins, MCP servers,
+    // CLAUDE.md, and auto memory. A user's Claude Code install often
+    // carries plugins whose lifecycle hooks (e.g. SessionStart) are built
+    // for interactive dev sessions. Under a scripted `-p` text-completion
+    // call those hooks still run, and a single failing/hanging one makes
+    // the claude process exit non-zero before it emits any assistant
+    // content — surfacing here as an opaque "exit code 1 (no stderr)"
+    // with only the hook's stream-json `system` events on stdout. --bare
+    // is designed exactly for scripted callers: it strips the user's
+    // dev-environment customization while still honoring OAuth credentials,
+    // model selection, and built-in tools, so subscription reuse keeps
+    // working without inheriting plugin side effects.
+    cmd.arg("--bare")
+        .arg("-p")
         .arg("--output-format")
         .arg("stream-json")
         .arg("--input-format")
