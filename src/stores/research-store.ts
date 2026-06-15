@@ -1,4 +1,5 @@
 import { create } from "zustand"
+import { persist } from "zustand/middleware"
 import type { WebSearchResult } from "@/lib/web-search"
 
 export interface ResearchTask {
@@ -21,6 +22,7 @@ interface ResearchState {
   addTask: (topic: string) => string
   updateTask: (id: string, updates: Partial<ResearchTask>) => void
   removeTask: (id: string) => void
+  clearHistory: () => void
   setPanelOpen: (open: boolean) => void
   getRunningCount: () => number
   getNextQueued: () => ResearchTask | undefined
@@ -28,10 +30,12 @@ interface ResearchState {
 
 let counter = 0
 
-export const useResearchStore = create<ResearchState>((set, get) => ({
-  tasks: [],
-  panelOpen: false,
-  maxConcurrent: 3,
+export const useResearchStore = create<ResearchState>()(
+  persist(
+    (set, get) => ({
+      tasks: [],
+      panelOpen: false,
+      maxConcurrent: 3,
 
   addTask: (topic) => {
     const id = `research-${++counter}`
@@ -64,6 +68,13 @@ export const useResearchStore = create<ResearchState>((set, get) => ({
       tasks: state.tasks.filter((t) => t.id !== id),
     })),
 
+  clearHistory: () =>
+    set((state) => ({
+      tasks: state.tasks.filter((t) =>
+        t.status === "searching" || t.status === "synthesizing" || t.status === "saving" || t.status === "queued"
+      ),
+    })),
+
   setPanelOpen: (panelOpen) => set({ panelOpen }),
 
   getRunningCount: () => {
@@ -77,4 +88,21 @@ export const useResearchStore = create<ResearchState>((set, get) => ({
     const { tasks } = get()
     return tasks.find((t) => t.status === "queued")
   },
-}))
+}),
+    {
+      name: "research-store",
+      partialize: (state) => ({
+        tasks: state.tasks.filter((t) => t.status === "done" || t.status === "error"),
+      }),
+      onRehydrateStorage: () => (state) => {
+        if (state) {
+          const maxId = state.tasks.reduce((max, t) => {
+            const num = parseInt(t.id.replace("research-", ""), 10)
+            return isNaN(num) ? max : Math.max(max, num)
+          }, 0)
+          counter = maxId
+        }
+      },
+    },
+  ),
+)

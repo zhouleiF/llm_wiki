@@ -41,6 +41,7 @@
     "webSource": "网页来源",
     "open": "打开",
     "remove": "移除",
+    "clearHistory": "清除历史",
     "status": {
       "queued": "排队中",
       "searching": "正在搜索来源...",

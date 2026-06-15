@@ -41,6 +41,7 @@
     "webSource": "Web source",
     "open": "Open",
     "remove": "Remove",
+    "clearHistory": "Clear history",
     "status": {
       "queued": "Queued",
       "searching": "Searching sources...",

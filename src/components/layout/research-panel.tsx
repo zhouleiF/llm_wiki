@@ -6,7 +6,7 @@ import rehypeKatex from "rehype-katex"
 import "katex/dist/katex.min.css"
 import {
   Search, Loader2, CheckCircle2, AlertCircle, ChevronRight, ChevronDown, X,
-  FileSearch, FileText, Globe2, Send,
+  FileSearch, FileText, Globe2, Send, Trash2,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useResearchStore, type ResearchTask } from "@/stores/research-store"
@@ -25,6 +25,7 @@ export function ResearchPanel() {
   const { t } = useTranslation()
   const tasks = useResearchStore((s) => s.tasks)
   const removeTask = useResearchStore((s) => s.removeTask)
+  const clearHistory = useResearchStore((s) => s.clearHistory)
   const setPanelOpen = useResearchStore((s) => s.setPanelOpen)
   const project = useWikiStore((s) => s.project)
   const llmConfig = useWikiStore((s) => s.llmConfig)
@@ -58,12 +59,23 @@ export function ResearchPanel() {
             </span>
           )}
         </div>
-        <button
-          onClick={() => setPanelOpen(false)}
-          className="rounded p-1 text-muted-foreground hover:bg-accent"
-        >
-          <X className="h-3.5 w-3.5" />
-        </button>
+        <div className="flex items-center gap-1">
+          {done.length > 0 && (
+            <button
+              onClick={clearHistory}
+              className="rounded p-1 text-muted-foreground hover:bg-accent hover:text-destructive"
+              title={t("research.clearHistory")}
+            >
+              <Trash2 className="h-3.5 w-3.5" />
+            </button>
+          )}
+          <button
+            onClick={() => setPanelOpen(false)}
+            className="rounded p-1 text-muted-foreground hover:bg-accent"
+            >
+              <X className="h-3.5 w-3.5" />
+            </button>
+        </div>
       </div>
 
       {/* Research input */}
