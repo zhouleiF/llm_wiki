@@ -123,6 +123,7 @@ export function PreviewPanel() {
         ) : category === "markdown" ? (
           <WikiEditor
             key={selectedFile}
+            filePath={selectedFile}
             content={fileContent}
             onSave={handleSave}
           />

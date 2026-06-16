@@ -289,6 +289,27 @@ pub fn open_project_folder(app: AppHandle, path: String) -> Result<(), String> {
     })
 }
 
+#[tauri::command]
+pub fn reveal_file_in_folder(app: AppHandle, path: String) -> Result<(), String> {
+    run_guarded("reveal_file_in_folder", || {
+        let p = Path::new(&path);
+        if !p.exists() {
+            return Err(format!("Path does not exist: '{}'", path));
+        }
+        let canonical = p
+            .canonicalize()
+            .map_err(|e| format!("Failed to resolve path '{}': {}", path, e))?
+            .to_string_lossy()
+            .to_string();
+        // Unlike `open_project_folder`, this targets an arbitrary file
+        // (no wiki-root validation), so we go straight to reveal — it
+        // opens the parent directory with the file selected.
+        app.opener()
+            .reveal_item_in_dir(canonical)
+            .map_err(|e| format!("Failed to reveal file in folder: {}", e))
+    })
+}
+
 fn validate_wiki_project_root(root: &Path) -> Result<(), String> {
     if !root.exists() {
         return Err(format!("Path does not exist: '{}'", root.display()));

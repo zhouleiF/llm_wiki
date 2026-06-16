@@ -116,6 +116,11 @@ export async function openProjectFolder(path: string): Promise<void> {
   return invoke<void>("open_project_folder", { path })
 }
 
+/** Reveal a file in the OS file manager (opens its parent folder). */
+export async function revealFileInFolder(path: string): Promise<void> {
+  return invoke<void>("reveal_file_in_folder", { path })
+}
+
 export async function clipServerStatus(): Promise<string> {
   return invoke<string>("clip_server_status")
 }

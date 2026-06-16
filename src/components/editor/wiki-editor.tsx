@@ -9,10 +9,11 @@ import { nord } from "@milkdown/theme-nord"
 import { Milkdown, MilkdownProvider, useEditor } from "@milkdown/react"
 import "@milkdown/theme-nord/style.css"
 import "katex/dist/katex.min.css"
-import { Pencil, Eye } from "lucide-react"
+import { Pencil, Eye, FolderOpen } from "lucide-react"
 import { parseFrontmatter } from "@/lib/frontmatter"
 import { FrontmatterPanel } from "@/components/editor/frontmatter-panel"
 import { WikiReader } from "@/components/editor/wiki-reader"
+import { revealFileInFolder } from "@/commands/fs"
 
 interface WikiEditorInnerProps {
   content: string
@@ -58,6 +59,7 @@ function WikiEditorInner({ content, onSave, onMarkdownChange }: WikiEditorInnerP
 
 interface WikiEditorProps {
   content: string
+  filePath: string
   onSave: (markdown: string, options?: { immediate?: boolean }) => void
 }
 
@@ -68,7 +70,7 @@ function wrapBareMathBlocks(text: string): string {
   )
 }
 
-export function WikiEditor({ content, onSave }: WikiEditorProps) {
+export function WikiEditor({ content, filePath, onSave }: WikiEditorProps) {
   // Default to read mode (ReactMarkdown render). Edit mode swaps
   // in Milkdown WYSIWYG. We default to read because:
   //   1. Milkdown's commonmark/gfm preset has no wikilink schema,
@@ -121,18 +123,33 @@ export function WikiEditor({ content, onSave }: WikiEditorProps) {
         }
       }}
     >
-      <button
-        type="button"
-        onClick={() => {
-          if (mode === "edit") saveLatestNow()
-          setMode((m) => (m === "read" ? "edit" : "read"))
-        }}
-        title={mode === "read" ? "Edit (raw markdown)" : "Done editing"}
-        className="absolute right-3 top-3 z-10 inline-flex items-center gap-1 rounded-md border border-border/60 bg-background/90 px-2 py-1 text-xs text-muted-foreground shadow-sm hover:bg-accent hover:text-foreground"
-      >
-        {mode === "read" ? <Pencil className="h-3.5 w-3.5" /> : <Eye className="h-3.5 w-3.5" />}
-        {mode === "read" ? "Edit" : "Done"}
-      </button>
+      <div className="absolute right-3 top-3 z-10 flex items-center gap-1.5">
+        <button
+          type="button"
+          onClick={() => {
+            revealFileInFolder(filePath).catch((err) =>
+              console.error("Failed to open folder:", err),
+            )
+          }}
+          title="Open containing folder"
+          className="inline-flex items-center gap-1 rounded-md border border-border/60 bg-background/90 px-2 py-1 text-xs text-muted-foreground shadow-sm hover:bg-accent hover:text-foreground"
+        >
+          <FolderOpen className="h-3.5 w-3.5" />
+          Open
+        </button>
+        <button
+          type="button"
+          onClick={() => {
+            if (mode === "edit") saveLatestNow()
+            setMode((m) => (m === "read" ? "edit" : "read"))
+          }}
+          title={mode === "read" ? "Edit (raw markdown)" : "Done editing"}
+          className="inline-flex items-center gap-1 rounded-md border border-border/60 bg-background/90 px-2 py-1 text-xs text-muted-foreground shadow-sm hover:bg-accent hover:text-foreground"
+        >
+          {mode === "read" ? <Pencil className="h-3.5 w-3.5" /> : <Eye className="h-3.5 w-3.5" />}
+          {mode === "read" ? "Edit" : "Done"}
+        </button>
+      </div>
 
       {mode === "read" ? (
         <div className="px-6 py-6">

@@ -211,6 +211,7 @@ pub fn run() {
             commands::project::create_project,
             commands::project::open_project,
             commands::project::open_project_folder,
+            commands::project::reveal_file_in_folder,
             commands::search::search_project,
             clip_server_status,
             api_server_status,
