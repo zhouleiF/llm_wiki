@@ -283,4 +283,73 @@ describe("ingest scenarios (fixture-driven)", () => {
     expect(projectB).toContain('sources: ["project-b/config.yaml"]')
     expect(projectB).toContain("analysis for project B")
   })
+
+  // Regression: when the generation LLM emits zero FILE blocks (empty
+  // stream, format refusal, or prose-only output), the ingest must NOT
+  // be recorded as success. Previously the fallback source-summary
+  // stub was pushed into writtenPaths, which (a) defeated the ingest
+  // queue's `writtenFiles.length === 0` retry safety net and (b) got
+  // frozen into the ingest cache — so every future re-ingest of the
+  // same source was silently skipped, permanently leaving it without
+  // wiki pages or review items. Reproduced with sources like
+  // "WW-20260616-0131-B-BUILDon深度调研.md".
+  it("does not cache or report success when the LLM emits zero FILE blocks", async () => {
+    ctx = { tmp: await createTempProject("ingest-empty-generation") }
+    const projectPath = ctx.tmp.path
+
+    await writeFileRaw(`${projectPath}/schema.md`, "")
+    await writeFileRaw(`${projectPath}/purpose.md`, "")
+    await writeFileRaw(`${projectPath}/wiki/index.md`, "# Index\n")
+    await writeFileRaw(`${projectPath}/wiki/overview.md`, "")
+    await writeFileRaw(`${projectPath}/raw/sources/report.md`, "# Some report\n\ncontent\n")
+
+    useWikiStore.setState({
+      project: {
+        name: "t",
+        path: projectPath,
+        createdAt: 0,
+        purposeText: "",
+        fileTree: [],
+      } as unknown as ReturnType<typeof useWikiStore.getState>["project"],
+    })
+    useWikiStore.getState().setLlmConfig({
+      provider: "openai",
+      apiKey: "test-key",
+      model: "gpt-4",
+      ollamaUrl: "",
+      customEndpoint: "",
+      maxContextSize: 128000,
+    })
+
+    // Stage 1 analysis is fine, but stage 2 generation is empty (the
+    // real-world failure mode: the model returned prose / nothing).
+    pendingResponses = ["analysis text", ""]
+
+    const cfg = useWikiStore.getState().llmConfig
+    const written = await autoIngest(
+      projectPath,
+      `${projectPath}/raw/sources/report.md`,
+      cfg,
+    )
+
+    // 1. autoIngest must return [] so the queue's zero-output safety
+    //    net triggers a retry instead of treating this as success.
+    expect(written).toEqual([])
+
+    // 2. No ingest-cache entry must be written — otherwise the next
+    //    re-ingest hits the cache and is skipped forever.
+    const cachePath = `${projectPath}/.llm-wiki/ingest-cache.json`
+    const cacheExists = await fileExists(cachePath)
+    if (cacheExists) {
+      const raw = await readFileRaw(cachePath)
+      expect(raw, "ingest-cache must not record an empty-generation source").not.toContain("report.md")
+    }
+
+    // 3. Activity must be marked as error, not done.
+    const activity = useActivityStore.getState().items
+    expect(activity.some((a) => a.status === "error")).toBe(true)
+
+    // 4. No review items created from an empty generation.
+    expect(useReviewStore.getState().items).toHaveLength(0)
+  })
 })

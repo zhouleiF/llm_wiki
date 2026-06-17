@@ -432,6 +432,49 @@ describe("autoIngest source summary paths", () => {
     ])
   })
 
+  it("parses REVIEW blocks when the LLM omits the closing `---` after the title", async () => {
+    if (!tmp) throw new Error("missing temp project")
+    sourceMarkers = ["project-a config"]
+    generationSuffix = [
+      "",
+      "---FILE: wiki/concepts/some-topic.md---",
+      "---",
+      'title: "Some topic"',
+      "---",
+      "",
+      "# Some topic",
+      "",
+      "X".repeat(10_500),
+      "---END FILE---",
+    ].join("\n")
+    // Real models (esp. Chinese / long titles) often emit the title then a
+    // bare newline, skipping the closing `---`. The parser must still pick
+    // these up — otherwise ingest silently produces no review items.
+    extraReviewResponse = [
+      "---REVIEW: missing-page | Meme币赛道全景Map",
+      "当前 wiki 缺少 Meme 币赛道全景，用于横向对比各 Meme 币的叙事阶段与流动性。",
+      "OPTIONS: Create Page | Skip",
+      "SEARCH: meme coin sector map | meme token valuation metrics | dogwifhat wif analysis",
+      "---END REVIEW---",
+    ].join("\n")
+
+    await autoIngest(
+      tmp.path,
+      `${tmp.path}/raw/sources/project-a/config.yaml`,
+      useWikiStore.getState().llmConfig,
+      undefined,
+      "project-a",
+    )
+
+    const reviews = useReviewStore.getState().items
+    expect(reviews).toHaveLength(1)
+    expect(reviews[0]).toMatchObject({
+      type: "missing-page",
+      title: "Meme币赛道全景Map",
+    })
+    expect(reviews[0].searchQueries).toHaveLength(3)
+  })
+
   it("parses generation and dedicated review-stage blocks separately", async () => {
     if (!tmp) throw new Error("missing temp project")
     sourceMarkers = ["project-a config"]

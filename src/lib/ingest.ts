@@ -886,13 +886,19 @@ async function autoIngestImpl(
   const sourceSummaryFullPath = `${pp}/${sourceSummaryPath}`
   const hasSourceSummary = writtenPaths.some((p) => normalizePath(p) === sourceSummaryPath)
 
-  // If the signal was aborted (e.g. user switched projects / cancelled),
-  // skip the fallback summary write — the LLM streams returned empty
-  // via the abort fast-path (onDone), and writing a stub file into the
-  // old project's wiki would both be noise and mask the error.
-  // Returning no files lets processNext's length-0 safety net mark the
-  // task for retry rather than "success".
-  if (!hasSourceSummary && !signal?.aborted) {
+  // Skip the fallback stub in two cases:
+  //  1. The signal was aborted (user switched projects / cancelled) — the
+  //     LLM streams returned empty via the abort fast-path (onDone), and a
+  //     stub in the old project's wiki would be noise + mask the error.
+  //  2. The LLM produced ZERO file blocks (empty stream, format refusal,
+  //     prose-only output). Writing a stub here would (a) defeat the ingest
+  //     queue's `writtenFiles.length === 0` retry safety net and (b) get
+  //     frozen into the ingest cache — so every future re-ingest of the
+  //     same source is silently skipped, permanently leaving it without
+  //     wiki pages or review items.
+  // In both cases returning no files lets processNext's length-0 safety
+  // net mark the task for retry rather than "success".
+  if (!hasSourceSummary && !signal?.aborted && writtenPaths.length > 0) {
     const date = new Date().toISOString().slice(0, 10)
     const fallbackContent = [
       "---",
@@ -1296,7 +1302,10 @@ async function writeFileBlocks(
   return { writtenPaths, warnings, hardFailures }
 }
 
-const REVIEW_BLOCK_REGEX = /---REVIEW:\s*(\w[\w-]*)\s*\|\s*(.+?)\s*---\n([\s\S]*?)---END REVIEW---/g
+// 标题后的闭合 `---` 设为可选：LLM（尤其中文 / 长标题）经常输出
+// `---REVIEW: type | 标题` 后直接换行而省略 `---`。强制要求 `---` 会让
+// matchAll 整体丢弃这些合法 review 块，表现为 ingest 不再产生待审阅。
+const REVIEW_BLOCK_REGEX = /---REVIEW:\s*(\w[\w-]*)\s*\|\s*(.+?)\s*(?:---)?\n([\s\S]*?)---END REVIEW---/g
 
 function parseReviewBlocks(
   text: string,
